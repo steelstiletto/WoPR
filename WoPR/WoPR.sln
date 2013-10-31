@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual C# Express 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WoPR", "WoPR\WoPR\WoPR.csproj", "{59F6AAF1-D18F-46AA-89F8-E6C90DA87A32}"
+EndProject
+Project("{96E2B04D-8817-42C6-938A-82C39BA4D311}") = "WoPRContent", "WoPR\WoPRContent\WoPRContent.contentproj", "{87882C2C-C072-460D-9CA7-5543C991C482}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Xbox 360 = Debug|Xbox 360
+		Release|Xbox 360 = Release|Xbox 360
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{59F6AAF1-D18F-46AA-89F8-E6C90DA87A32}.Debug|Xbox 360.ActiveCfg = Debug|Xbox 360
+		{59F6AAF1-D18F-46AA-89F8-E6C90DA87A32}.Debug|Xbox 360.Build.0 = Debug|Xbox 360
+		{59F6AAF1-D18F-46AA-89F8-E6C90DA87A32}.Debug|Xbox 360.Deploy.0 = Debug|Xbox 360
+		{59F6AAF1-D18F-46AA-89F8-E6C90DA87A32}.Release|Xbox 360.ActiveCfg = Release|Xbox 360
+		{59F6AAF1-D18F-46AA-89F8-E6C90DA87A32}.Release|Xbox 360.Build.0 = Release|Xbox 360
+		{59F6AAF1-D18F-46AA-89F8-E6C90DA87A32}.Release|Xbox 360.Deploy.0 = Release|Xbox 360
+		{87882C2C-C072-460D-9CA7-5543C991C482}.Debug|Xbox 360.ActiveCfg = Debug|Xbox 360
+		{87882C2C-C072-460D-9CA7-5543C991C482}.Release|Xbox 360.ActiveCfg = Release|Xbox 360
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
