@@ -1,0 +1,6 @@
+C:\Users\steel_000\Documents\GitHub\WoPR\WoPR\WoPR\WoPR\bin\x86\Debug\WoPR.exe
+C:\Users\steel_000\Documents\GitHub\WoPR\WoPR\WoPR\WoPR\bin\x86\Debug\WoPR.pdb
+C:\Users\steel_000\Documents\GitHub\WoPR\WoPR\WoPR\WoPR\obj\x86\Debug\WoPR.csprojResolveAssemblyReference.cache
+C:\Users\steel_000\Documents\GitHub\WoPR\WoPR\WoPR\WoPR\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\steel_000\Documents\GitHub\WoPR\WoPR\WoPR\WoPR\obj\x86\Debug\WoPR.exe
+C:\Users\steel_000\Documents\GitHub\WoPR\WoPR\WoPR\WoPR\obj\x86\Debug\WoPR.pdb

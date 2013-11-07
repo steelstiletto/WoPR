@@ -3,14 +3,14 @@
   <Asset Type="Pipeline:BuildItemCollection">
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
-      <TargetPlatform>Xbox360</TargetPlatform>
+      <TargetPlatform>Windows</TargetPlatform>
       <TargetProfile>HiDef</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
-      <CompressContent>true</CompressContent>
-      <RootDirectory>C:\Users\steel_000\Documents\Visual Studio 2010\Projects\WoPR\WoPR\WoPRContent\</RootDirectory>
-      <LoggerRootDirectory>C:\Users\steel_000\Documents\Visual Studio 2010\Projects\WoPR\WoPR\WoPR\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\steel_000\Documents\Visual Studio 2010\Projects\WoPR\WoPR\WoPRContent\obj\Xbox 360\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\steel_000\Documents\Visual Studio 2010\Projects\WoPR\WoPR\WoPR\bin\Xbox 360\Debug\Content\</OutputDirectory>
+      <CompressContent>false</CompressContent>
+      <RootDirectory>C:\Users\steel_000\Documents\GitHub\WoPR\WoPR\WoPR\WoPRContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\steel_000\Documents\GitHub\WoPR\WoPR\WoPR\WoPR\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\steel_000\Documents\GitHub\WoPR\WoPR\WoPR\WoPRContent\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\steel_000\Documents\GitHub\WoPR\WoPR\WoPR\WoPR\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>

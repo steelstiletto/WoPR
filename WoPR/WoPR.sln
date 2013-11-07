@@ -1,24 +1,22 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual C# Express 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WoPR", "WoPR\WoPR\WoPR.csproj", "{59F6AAF1-D18F-46AA-89F8-E6C90DA87A32}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WoPR", "WoPR\WoPR\WoPR.csproj", "{5BE6C4BD-EE0A-4B11-81AF-38423D67385D}"
 EndProject
-Project("{96E2B04D-8817-42C6-938A-82C39BA4D311}") = "WoPRContent", "WoPR\WoPRContent\WoPRContent.contentproj", "{87882C2C-C072-460D-9CA7-5543C991C482}"
+Project("{96E2B04D-8817-42C6-938A-82C39BA4D311}") = "WoPRContent", "WoPR\WoPRContent\WoPRContent.contentproj", "{87EA892D-E43A-4874-9726-242D5766F4E2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|Xbox 360 = Debug|Xbox 360
-		Release|Xbox 360 = Release|Xbox 360
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{59F6AAF1-D18F-46AA-89F8-E6C90DA87A32}.Debug|Xbox 360.ActiveCfg = Debug|Xbox 360
-		{59F6AAF1-D18F-46AA-89F8-E6C90DA87A32}.Debug|Xbox 360.Build.0 = Debug|Xbox 360
-		{59F6AAF1-D18F-46AA-89F8-E6C90DA87A32}.Debug|Xbox 360.Deploy.0 = Debug|Xbox 360
-		{59F6AAF1-D18F-46AA-89F8-E6C90DA87A32}.Release|Xbox 360.ActiveCfg = Release|Xbox 360
-		{59F6AAF1-D18F-46AA-89F8-E6C90DA87A32}.Release|Xbox 360.Build.0 = Release|Xbox 360
-		{59F6AAF1-D18F-46AA-89F8-E6C90DA87A32}.Release|Xbox 360.Deploy.0 = Release|Xbox 360
-		{87882C2C-C072-460D-9CA7-5543C991C482}.Debug|Xbox 360.ActiveCfg = Debug|Xbox 360
-		{87882C2C-C072-460D-9CA7-5543C991C482}.Release|Xbox 360.ActiveCfg = Release|Xbox 360
+		{5BE6C4BD-EE0A-4B11-81AF-38423D67385D}.Debug|x86.ActiveCfg = Debug|x86
+		{5BE6C4BD-EE0A-4B11-81AF-38423D67385D}.Debug|x86.Build.0 = Debug|x86
+		{5BE6C4BD-EE0A-4B11-81AF-38423D67385D}.Release|x86.ActiveCfg = Release|x86
+		{5BE6C4BD-EE0A-4B11-81AF-38423D67385D}.Release|x86.Build.0 = Release|x86
+		{87EA892D-E43A-4874-9726-242D5766F4E2}.Debug|x86.ActiveCfg = Debug|x86
+		{87EA892D-E43A-4874-9726-242D5766F4E2}.Release|x86.ActiveCfg = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
