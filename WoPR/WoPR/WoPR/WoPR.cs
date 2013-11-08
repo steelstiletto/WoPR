@@ -23,6 +23,8 @@ namespace WoPR
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
+
+            Map m = new Map();
         }
 
         /// <summary>

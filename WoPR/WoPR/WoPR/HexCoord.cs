@@ -42,13 +42,14 @@ namespace WoPR
 
         public override bool Equals(object obj)
         {
-            HexCoord h = null as HexCoord;
-            return base.Equals(obj);
+            HexCoord h = obj as HexCoord;
+            if (h == null) return false;
+            return x == h.x && y == h.y;
         }
 
         public override int GetHashCode()
         {
-            return base.GetHashCode();
+            return x * 3079 + y;
         }
 
     }
