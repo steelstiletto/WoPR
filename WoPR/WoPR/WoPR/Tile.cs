@@ -7,5 +7,10 @@ namespace WoPR
 {
     class Tile
     {
+        public string type { get; private set; }
+        public Tile(string Type)
+        {
+            type = Type;
+        }
     }
 }

@@ -59,5 +59,10 @@ namespace WoPR
             writer.WriteEndDocument();
             writer.Flush();
         }
+
+        private void parseMapXML(string fileName)
+        {
+
+        }
     }
 }
