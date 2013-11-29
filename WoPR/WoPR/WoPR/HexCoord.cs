@@ -1,8 +1,4 @@
-using System;
 using System.Diagnostics;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace WoPR
 {
@@ -50,6 +46,11 @@ namespace WoPR
         public override int GetHashCode()
         {
             return x * 3079 + y;
+        }
+
+        public override string ToString()
+        {
+            return "X=" + x + " Y=" + y + " Z=" + z;
         }
 
     }

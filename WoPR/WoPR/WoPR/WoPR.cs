@@ -1,13 +1,6 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Audio;
-using Microsoft.Xna.Framework.Content;
-using Microsoft.Xna.Framework.GamerServices;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using Microsoft.Xna.Framework.Media;
 
 namespace WoPR
 {
@@ -18,13 +11,25 @@ namespace WoPR
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+        UI ui;
+        public SimpleController player1;
 
         public WoPR()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
-
+            IsMouseVisible = true;
             Map m = new Map();
+            ui = new UI(this);
+            Components.Add(ui);
+            player1 = new SimpleController(this, PlayerIndex.One);
+            Components.Add(player1);
+            testStuff();
+        }
+
+        private void testStuff()
+        {
+
         }
 
         /// <summary>
@@ -88,6 +93,10 @@ namespace WoPR
             // TODO: Add your drawing code here
 
             base.Draw(gameTime);
+        }
+
+        public void MenuSelection(string menuName, string itemSelected)
+        {
         }
     }
 }

@@ -113,13 +113,16 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Tile.cs" />
+    <Compile Include="UI.cs" />
     <Compile Include="WoPR.cs" />
     <Compile Include="SimpleController.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Game.ico" />
     <Content Include="GameThumbnail.png" />
-    <Content Include="MapData.xml" />
+    <Content Include="MapData.xml">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WoPRContent\WoPRContent.contentproj">
