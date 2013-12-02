@@ -7,8 +7,8 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\steel_000\Documents\GitHub\WoPR\WoPR\WoPR\WoPR\bin\x86\Debug\Content\gameFont.xnb</Output>
-      <Time>2013-11-28T19:34:52.2469849-06:00</Time>
+      <Output>C:\Users\steel_000\Desktop\WoPR\WoPR\WoPR\WoPR\bin\x86\Debug\Content\gameFont.xnb</Output>
+      <Time>2013-11-29T16:41:26.7556368-06:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
@@ -16,10 +16,10 @@
       <TargetProfile>HiDef</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\Users\steel_000\Documents\GitHub\WoPR\WoPR\WoPR\WoPRContent\</RootDirectory>
-      <LoggerRootDirectory>C:\Users\steel_000\Documents\GitHub\WoPR\WoPR\WoPR\WoPR\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\steel_000\Documents\GitHub\WoPR\WoPR\WoPR\WoPRContent\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\steel_000\Documents\GitHub\WoPR\WoPR\WoPR\WoPR\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\steel_000\Desktop\WoPR\WoPR\WoPR\WoPRContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\steel_000\Desktop\WoPR\WoPR\WoPR\WoPR\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\steel_000\Desktop\WoPR\WoPR\WoPR\WoPRContent\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\steel_000\Desktop\WoPR\WoPR\WoPR\WoPR\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>
@@ -47,8 +47,8 @@
         <Value>2010-08-23T12:41:18-05:00</Value>
       </Assembly>
       <Assembly>
-        <Key>C:\windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
-        <Value>2013-09-16T20:55:41.7663904-05:00</Value>
+        <Key>C:\Windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
+        <Value>2013-09-14T18:47:11.3393211-05:00</Value>
       </Assembly>
     </Assemblies>
   </Asset>

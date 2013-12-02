@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Xml;
+using Microsoft.Xna.Framework.Graphics;
 
 namespace WoPR
 {
-    class Map
+    public class Map
     {
         private Dictionary<HexCoord, Tile> tiles;
 
@@ -104,6 +105,10 @@ namespace WoPR
             {
                 Debug.Print(pair.Value.type + " " + pair.Key);
             }
+        }
+
+        public void draw(SpriteBatch batch)
+        {
         }
     }
 }

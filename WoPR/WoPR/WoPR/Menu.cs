@@ -1,11 +1,12 @@
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 namespace WoPR
 {
-    class Menu
+    public class Menu
     {
         private Vector2 position, size;
         private int selected;
@@ -51,28 +52,33 @@ namespace WoPR
 
         // Use a button input to change the selected menu item
         public bool changeSelection(button d)
-                {
-                    if (selected != -1) return changeSelectionUpdate(d);
-                    return changeSelectionNew(d);
-                }
+        {
+            if (selected != -1) return changeSelectionUpdate(d);
+            return changeSelectionNew(d);
+        }
 
         // If an item was selected before, the selection is updated with the direction
         private bool changeSelectionUpdate(button d)
         {
+            Debug.Print("Changing Selection");
             if (d == button.up)
             {
+                Debug.Print("Moving Up" + selected);
                 if (selected > 0)
                 {
                     selected--;
+                    Debug.Print(selected.ToString());
                     return true;
                 }
                 else return false;
             }
             if (d == button.down)
             {
-                if (selected < menuItems.Count - 2)
+                Debug.Print("Moving Down");
+                if (selected < menuItems.Count - 1)
                 {
                     selected++;
+                    Debug.Print(selected.ToString());
                     return true;
                 }
                 else return false;
@@ -85,6 +91,7 @@ namespace WoPR
         // If no item was selected, selected is set to the appropriate end of the list
         private bool changeSelectionNew(button d)
         {
+            Debug.Print("Setting Selection");
             if (d == button.up)
             {
                 selected = menuItems.Count - 1;
@@ -101,6 +108,8 @@ namespace WoPR
         // Return the index and the title currently selected
         public KeyValuePair<int, string> getSelected()
         {
+            // Special case for if nothing has been selected to automatically select the first option
+            if (selected == -1) return new KeyValuePair<int, string>(0, menuItems[0]);
             return new KeyValuePair<int, string>(selected, menuItems[selected]);
         }
 

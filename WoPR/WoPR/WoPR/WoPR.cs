@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
@@ -13,18 +14,24 @@ namespace WoPR
         SpriteBatch spriteBatch;
         UI ui;
         public SimpleController player1;
+        public Map currentMap;
+
+        private double TESTprintTimer;
 
         public WoPR()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
             IsMouseVisible = true;
-            Map m = new Map();
+            currentMap = new Map();
             ui = new UI(this);
             Components.Add(ui);
             player1 = new SimpleController(this, PlayerIndex.One);
             Components.Add(player1);
             testStuff();
+            initializeMenus();
+
+            TESTprintTimer = 0;
         }
 
         private void testStuff()
@@ -77,7 +84,12 @@ namespace WoPR
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
 
-            // TODO: Add your update logic here
+            TESTprintTimer += gameTime.ElapsedGameTime.TotalSeconds;
+            if (TESTprintTimer >= 1)
+            {
+                TESTprintFunction();
+                TESTprintTimer -= 1;
+            }
 
             base.Update(gameTime);
         }
@@ -97,6 +109,37 @@ namespace WoPR
 
         public void MenuSelection(string menuName, string itemSelected)
         {
+            switch (menuName)
+            {
+                case "mainMenu":
+                    mainMenuSelection(itemSelected);
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void initializeMenus()
+        {
+            Menu m = new Menu(new Vector2(200, 200), new Vector2(200, 200), 1);
+            m.addItem("New Game");
+            m.addItem("Exit");
+            ui.addMenu(m, "mainMenu");
+            ui.activeMenu = "mainMenu";
+        }
+
+        private void mainMenuSelection(string itemSelected)
+        {
+            if (itemSelected == "Exit") this.Exit();
+        }
+
+        private void TESTprintFunction()
+        {
+            foreach (button b in player1.buttonEvents)
+            {
+                Debug.Print(b + " ");
+            }
+            Debug.Print("\n");
         }
     }
 }

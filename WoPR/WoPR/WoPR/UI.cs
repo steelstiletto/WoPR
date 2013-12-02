@@ -11,6 +11,7 @@ namespace WoPR
         public string activeMenu;
         private SpriteBatch batch;
         private SpriteFont font;
+        public bool displayMap;
         new public WoPR Game;
 
         public UI(Game game)
@@ -65,6 +66,7 @@ namespace WoPR
                 currentEvent == button.A ||
                 currentEvent == button.B)
             {
+                Debug.Print("Menu Event!");
                 Game.player1.buttonEvents.Dequeue();
                 if (currentEvent == button.A)
                 {
@@ -77,9 +79,12 @@ namespace WoPR
                 // Else it must be a direction, pass it to the active menu
                 else
                 {
+                    Debug.Print("It's a direction.");
                     menus[activeMenu].changeSelection(currentEvent);
                 }
             }
+            // Following is for testing while only the UI consumes buttons.
+            else { Game.player1.buttonEvents.Dequeue(); }
         }
 
         // Draw the active menu
@@ -88,8 +93,14 @@ namespace WoPR
             base.Draw(gameTime);
             batch.Begin(SpriteSortMode.FrontToBack, BlendState.AlphaBlend);
             Debug.Assert(menus.ContainsKey(activeMenu), "Invalid menu selected as active: " + activeMenu);
+            if (displayMap) Game.currentMap.draw(batch);
             menus[activeMenu].draw(batch, font);
             batch.End();
+        }
+
+        public void addMenu(Menu m, string label)
+        {
+            menus.Add(label, m);
         }
     }
 }

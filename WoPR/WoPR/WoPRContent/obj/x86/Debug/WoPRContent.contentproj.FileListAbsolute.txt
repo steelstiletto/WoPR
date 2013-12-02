@@ -1,1 +1,2 @@
 C:\Users\steel_000\Documents\GitHub\WoPR\WoPR\WoPR\WoPRContent\obj\x86\Debug\WoPRContent.contentprojResolveAssemblyReference.cache
+C:\Users\steel_000\Desktop\WoPR\WoPR\WoPR\WoPRContent\obj\x86\Debug\WoPRContent.contentprojResolveAssemblyReference.cache
