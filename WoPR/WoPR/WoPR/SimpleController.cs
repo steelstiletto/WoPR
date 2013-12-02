@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Diagnostics;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 
@@ -53,7 +54,7 @@ namespace WoPR
             if (previous.Buttons.Back == ButtonState.Released && current.Buttons.Back == ButtonState.Pressed)
                 buttonEvents.Enqueue(button.back);
 
-            // Direction presses add and event and start a timer when first pressed
+            // Direction presses add an event and start a timer when first pressed
             if (previous.DPad.Up == ButtonState.Released && current.DPad.Up == ButtonState.Pressed)
             {
                 buttonEvents.Enqueue(button.up);
@@ -78,6 +79,7 @@ namespace WoPR
             // Directions that are still down are checked vs the interval to add an additional event
             if (previous.DPad.Up == ButtonState.Pressed && current.DPad.Up == ButtonState.Pressed)
             {
+                
                 // If during the first second, check to see if the 1 second interval has passed to add the first repeat event
                 if (directionRepeatTimers[button.up] < 1)
                     if (directionRepeatTimers[button.up] + gameTime.ElapsedGameTime.TotalSeconds >= 1)
@@ -144,6 +146,16 @@ namespace WoPR
                     buttonEvents.Enqueue(button.right);
                 }
             }
+
+            // If the direction buttons are not being held down, reset the timers.
+            if (current.DPad.Up != ButtonState.Pressed)
+                directionRepeatTimers[button.up] = 0;
+            if (current.DPad.Down != ButtonState.Pressed)
+                directionRepeatTimers[button.down] = 0;
+            if (current.DPad.Left != ButtonState.Pressed)
+                directionRepeatTimers[button.left] = 0;
+            if (current.DPad.Right != ButtonState.Pressed)
+                directionRepeatTimers[button.right] = 0;
 
             // Update the previous gamepad with the current
             previous = current;
