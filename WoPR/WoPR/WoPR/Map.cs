@@ -86,7 +86,8 @@ namespace WoPR
                 if (!reader.IsStartElement()) continue;
                 if (reader.Name != "terrain") continue;
                 string terrainType = reader.GetAttribute("type");
-                Tile currentTile = new Tile(terrainType);
+                Tile.TileType terrainEnum = (Tile.TileType) Enum.Parse(typeof(Tile.TileType), terrainType);
+                Tile currentTile;
                 reader.ReadToDescendant("coord");
                 do
                 {
@@ -98,6 +99,7 @@ namespace WoPR
                     int Z = Convert.ToInt32(reader.Value);
                     Debug.Print(X + " " + Y + " " + Z);
                     HexCoord position = new HexCoord(X, Y, Z);
+                    currentTile = new Tile(terrainEnum, position);
                     tiles.Add(position, currentTile);
                 } while (reader.ReadToNextSibling("coord"));
             }

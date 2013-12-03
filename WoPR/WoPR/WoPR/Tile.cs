@@ -13,7 +13,7 @@ namespace WoPR
         public Player owner;
         public Unit unit;
 
-        private int[] coords;   //x,y,z
+        private HexCoord position;   //x,y,z
         private int[] moveCosts;//foot, tread, air
         private int capturehp;
         private int hpHealed;
@@ -23,10 +23,14 @@ namespace WoPR
         private String name;
         private Building build;
         private TileType t;
-
-        public Tile(TileType Type, int[] xyz)
+        public string type
         {
-            coords = xyz;
+            get { return t.ToString(); }
+        }
+
+        public Tile(TileType Type, HexCoord xyz)
+        {
+            position = xyz;
             unit = null;
             t = Type;
 

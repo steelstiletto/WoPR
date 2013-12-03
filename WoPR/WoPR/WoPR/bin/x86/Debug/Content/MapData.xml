@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <!--Test Map Data-->
 <map>
-  <terrain type="sand">
+  <terrain type="water">
     <coord x="3" y="-3" z="0" />
     <coord x="1" y="-1" z="0" />
   </terrain>
