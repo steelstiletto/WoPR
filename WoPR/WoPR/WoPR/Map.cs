@@ -60,10 +60,6 @@ namespace WoPR
             writer.WriteAttributeString("z", "0");
             writer.WriteEndElement();
             writer.WriteEndElement();
-            //writer.WriteStartElement("p", "person", "urn:person");
-            //writer.WriteStartElement("name", "");
-            //writer.WriteString("joebob");
-            //writer.WriteEndElement();
             writer.WriteEndDocument();
             writer.Flush();
             writer.Close();
@@ -72,22 +68,6 @@ namespace WoPR
         private void parseMapXML(string fileName)
         {
             XmlReader reader = XmlReader.Create(fileName);
-            //while (reader.Read())
-            //{
-            //    if (reader.IsStartElement())
-            //    {
-            //        if (reader.IsEmptyElement)
-            //            Console.WriteLine("<{0}/>", reader.Name);
-            //        else
-            //        {
-            //            Console.Write("<{0}> ", reader.Name);
-            //            reader.Read(); // Read the start tag. 
-            //            if (reader.IsStartElement())  // Handle nested elements.
-            //                Console.Write("\r\n<{0}>", reader.Name);
-            //            //Console.WriteLine(reader.ReadString());  //Read the text content of the element.
-            //        }
-            //    }
-            //}
             while (reader.Read())
             {
                 if (!reader.IsStartElement()) continue;
