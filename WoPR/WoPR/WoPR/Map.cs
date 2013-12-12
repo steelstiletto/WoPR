@@ -4,15 +4,22 @@ using System.Diagnostics;
 using System.Xml;
 using Microsoft.Xna.Framework.Graphics;
 
+/* CHANGED*/using Microsoft.Xna.Framework;/* CHANGED*/
+
 namespace WoPR
 {
     public class Map
     {
         private Dictionary<HexCoord, Tile> tiles;
+        
+        /* CHANGED*/private Game WoPR;/* CHANGED*/
 
-        public Map()
+        public Map(Game game)
         {
             tiles = new Dictionary<HexCoord, Tile>();
+
+            /* CHANGED*/WoPR = game; //CHANGED
+
             //writeBasicMap();
             parseMapXML("Content/MapData.xml");
         }
@@ -99,7 +106,9 @@ namespace WoPR
                     int Z = Convert.ToInt32(reader.Value);
                     Debug.Print(X + " " + Y + " " + Z);
                     HexCoord position = new HexCoord(X, Y, Z);
-                    currentTile = new Tile(terrainEnum, position);
+
+                    /* CHANGED*/currentTile = new Tile(WoPR, terrainEnum, position);/* CHANGED*/
+
                     tiles.Add(position, currentTile);
                 } while (reader.ReadToNextSibling("coord"));
             }
@@ -111,6 +120,12 @@ namespace WoPR
 
         public void draw(SpriteBatch batch)
         {
+            /*CHANGED CHANGED CHANGED CHANGED*/
+            foreach (KeyValuePair<HexCoord, Tile> pair in tiles)
+            {
+                pair.Value.Draw(batch);
+            }
+            /*CHANGED CHANGED CHANGED CHANGED*/
         }
     }
 }
