@@ -2,7 +2,7 @@ using System.Diagnostics;
 
 namespace WoPR
 {
-    class HexCoord
+    public class HexCoord
     {
         //private int x, y;
         public int x { get; private set; }
@@ -52,6 +52,8 @@ namespace WoPR
         {
             return "X=" + x + " Y=" + y + " Z=" + z;
         }
+
+        public static HexCoord Zero { get { return new HexCoord(0, 0, 0); } }
 
     }
 }
