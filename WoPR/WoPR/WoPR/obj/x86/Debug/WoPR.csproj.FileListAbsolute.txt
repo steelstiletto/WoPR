@@ -48,3 +48,12 @@ C:\Users\Terran-Tower\Desktop\Proj\WoPR\WoPR\WoPR\bin\x86\Debug\Content\water.xn
 C:\Users\Terran-Tower\Desktop\Proj\WoPR\WoPR\WoPR\bin\x86\Debug\Content\MapData.xml
 C:\Users\Terran-Tower\Desktop\Proj\WoPR\WoPR\WoPR\bin\x86\Debug\WoPR.exe
 C:\Users\Terran-Tower\Desktop\Proj\WoPR\WoPR\WoPR\bin\x86\Debug\WoPR.pdb
+C:\Users\steel_000\Desktop\WoPR\WoPR\WoPR\WoPR\bin\x86\Debug\Content\borders_p1.xnb
+C:\Users\steel_000\Desktop\WoPR\WoPR\WoPR\WoPR\bin\x86\Debug\Content\borders_p2.xnb
+C:\Users\steel_000\Desktop\WoPR\WoPR\WoPR\WoPR\bin\x86\Debug\Content\forest.xnb
+C:\Users\steel_000\Desktop\WoPR\WoPR\WoPR\WoPR\bin\x86\Debug\Content\plain.xnb
+C:\Users\steel_000\Desktop\WoPR\WoPR\WoPR\WoPR\bin\x86\Debug\Content\road.xnb
+C:\Users\steel_000\Desktop\WoPR\WoPR\WoPR\WoPR\bin\x86\Debug\Content\Tborders_p0.xnb
+C:\Users\steel_000\Desktop\WoPR\WoPR\WoPR\WoPR\bin\x86\Debug\Content\Tborders_p1.xnb
+C:\Users\steel_000\Desktop\WoPR\WoPR\WoPR\WoPR\bin\x86\Debug\Content\Tborders_p2.xnb
+C:\Users\steel_000\Desktop\WoPR\WoPR\WoPR\WoPR\bin\x86\Debug\Content\water.xnb

@@ -64,30 +64,29 @@ namespace WoPR
             // If there are no events, there is no need to proceed
             if (Game.player1.buttonEvents.Count == 0) return;
 
+            button pressedButton = Game.player1.buttonEvents.Dequeue();
+
             if (currentType == InputType.menu)
-                menuInput();
+                menuInput(pressedButton);
             if (currentType == InputType.map)
-                return;
+                mapInput(pressedButton);
 
             
         }
 
-        private void menuInput()
+        private void menuInput(button pressedButton)
         {
-            // Peek to view the top button event in player1's queue
-            button currentEvent = Game.player1.buttonEvents.Peek();
-
             // If the event is a direction up or down, or A or B, consume it for the active menu
-            if (currentEvent == button.up ||
-                currentEvent == button.down ||
-                currentEvent == button.A ||
-                currentEvent == button.B)
+            if (pressedButton == button.up ||
+                pressedButton == button.down ||
+                pressedButton == button.A ||
+                pressedButton == button.B)
             {
-                if (currentEvent == button.A)
+                if (pressedButton == button.A)
                 {
                     Game.MenuSelection(activeMenu, menus[activeMenu].getSelected().Value);
                 }
-                else if (currentEvent == button.B)
+                else if (pressedButton == button.B)
                 {
                     // If it's a B button, implement this later.
                 }
@@ -95,10 +94,14 @@ namespace WoPR
                 else
                 {
                     Debug.Print("It's a direction.");
-                    menus[activeMenu].changeSelection(currentEvent);
+                    menus[activeMenu].changeSelection(pressedButton);
                 }
             }
-            Game.player1.buttonEvents.Dequeue();
+        }
+
+        private void mapInput(button pressedButton)
+        {
+
         }
 
         // Draw the active menu
