@@ -23,7 +23,7 @@ namespace WoPR
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
             IsMouseVisible = true;
-            currentMap = new Map();
+            currentMap = new Map(this);
             ui = new UI(this);
             Components.Add(ui);
             player1 = new SimpleController(this, PlayerIndex.One);
