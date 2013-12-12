@@ -26,12 +26,15 @@ namespace WoPR
         private Attack secondaryAttack;
         private Player owner;
 
+        public unitType t {get; private set;}
+
         //In: type of unit to be created, owner of created unit
         //Out: unit of specified details
         public Unit(unitType type, Player p)
         {
             hp = 100;
             owner = p;
+            t = type;
 
             //switch to set stats based on given type
             switch (type)

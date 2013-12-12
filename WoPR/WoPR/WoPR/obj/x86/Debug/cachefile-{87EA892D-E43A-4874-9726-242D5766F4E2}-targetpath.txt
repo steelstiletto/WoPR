@@ -8,4 +8,11 @@ Content\Tborders_p0.xnb
 Content\Tborders_p1.xnb
 Content\Tborders_p2.xnb
 Content\water.xnb
+Content\Demoman.xnb
+Content\SamTroop.xnb
+Content\TborderS.xnb
+Content\trooper.xnb
+Content\Barracks.xnb
+Content\HQ.xnb
+Content\Supply.xnb
 Content\MapData.xml

@@ -9,11 +9,13 @@ namespace WoPR
     {
         public List<Unit> unitList;
         private int resources;
+        public bool isPlayer1 { get; private set; }
 
-        public Player()
+        public Player(bool p1)
         {
             unitList = new List<Unit>();
             resources = 0;
+            isPlayer1 = p1;
         }
 
         //input: amount spent

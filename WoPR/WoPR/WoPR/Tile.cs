@@ -161,13 +161,24 @@ namespace WoPR
         }
                 private void drawBorder(SpriteBatch batch)
                 {
-                    if(Game.ui.currentSelection == position)
+                    if (Game.ui.currentSelection == position) //if tile is selected us the highlight sprite
                     {
-
+                        batch.Draw(Game.tBorderS, convertToXY(), Color.White);
                     }
                     else
-                    {                        
-                        batch.Draw(Game.tBorder0, convertToXY(), Color.White);
+                    {
+                        if (false)//check if owned by player 1
+                        {
+                            batch.Draw(Game.tBorder1, convertToXY(), Color.White);
+                        }
+                        else if (false)//check if owned by player 1
+                        {
+                            batch.Draw(Game.tBorder2, convertToXY(), Color.White);
+                        }
+                        else //not owned
+                        {
+                            batch.Draw(Game.tBorder0, convertToXY(), Color.White);
+                        }
                     }
                 }
                 private void drawTile(SpriteBatch batch)
@@ -196,30 +207,79 @@ namespace WoPR
                             break;
 
                         case TileType.headquarters:
+                            batch.Draw(Game.hq, temp, Color.White);
                             break;
 
                         case TileType.barracks:
+                            batch.Draw(Game.barracks, temp, Color.White);
                             break;
 
                         case TileType.garage:
                             break;
 
                         case TileType.supplyDepot:
+                            batch.Draw(Game.supply, temp, Color.White);
                             break;
                     }
                 }
                 private void drawUnitBorder(SpriteBatch batch)
                 {
+                    Vector2 temp = convertToXY();
+
                     if(unit != null)
                     {
-                        batch.Draw(Game.uBorder1, convertToXY(), Color.White);
+                        if (false)//check if unit belongs to player 1
+                        {
+                            batch.Draw(Game.uBorder1, temp, Color.White);
+                        }
+                        else
+                        {
+                            batch.Draw(Game.uBorder2, temp, Color.White);
+                        }
                     }
                 }
                 private void drawUnit(SpriteBatch batch)
-                {
+                {                    
+                    Vector2 temp = convertToXY();
+
                     if (unit != null)
                     {
-                        batch.Draw(Game.uBorder1, convertToXY(), Color.Red);
+                        Unit.unitType t = unit.t;
+
+                        if (false)//check if unit belongs to player 1
+                        {
+                            switch (t)
+                            {
+                                case Unit.unitType.trooper:
+                                    batch.Draw(Game.plain, temp, Color.Red);
+                                    break;
+
+                                case Unit.unitType.demolitionSquad:
+                                    batch.Draw(Game.water, temp, Color.Red);
+                                    break;
+
+                                case Unit.unitType.samTrooper:
+                                    batch.Draw(Game.road, temp, Color.Red);
+                                    break;
+                            }
+                        }
+                        else
+                        {
+                            switch (t)
+                            {
+                                case Unit.unitType.trooper:
+                                    batch.Draw(Game.plain, temp, Color.Blue);
+                                    break;
+
+                                case Unit.unitType.demolitionSquad:
+                                    batch.Draw(Game.water, temp, Color.Blue);
+                                    break;
+
+                                case Unit.unitType.samTrooper:
+                                    batch.Draw(Game.road, temp, Color.Blue);
+                                    break;
+                            }
+                        }
                     }
                 }
         
@@ -230,8 +290,6 @@ namespace WoPR
 
             x = (120 * (float)position.x * (3 / 2));
             y = (80 * (float)Math.Sqrt(3) * ((float)position.y + ((float)position.x / 2)));
-            x += 370;
-            y += 380;
 
             return new Vector2(x, y);
         }

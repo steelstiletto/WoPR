@@ -20,12 +20,19 @@ namespace WoPR
         public Texture2D tBorder0 = null;
         public Texture2D tBorder1 = null;
         public Texture2D tBorder2 = null;
+        public Texture2D tBorderS = null;
         public Texture2D forest = null;
         public Texture2D plain = null;
         public Texture2D road = null;
         public Texture2D water = null;
+        public Texture2D barracks = null;
+        public Texture2D hq = null;
+        public Texture2D supply = null;
         public Texture2D uBorder1 = null;
         public Texture2D uBorder2 = null;
+        public Texture2D trooper = null;
+        public Texture2D demo = null;
+        public Texture2D samT = null;
 
         private double TESTprintTimer;
 
@@ -42,8 +49,8 @@ namespace WoPR
             testStuff();
             initializeMenus();
             graphics.IsFullScreen = false;
-            graphics.PreferredBackBufferHeight = 1000;
-            graphics.PreferredBackBufferWidth = 1000;
+            graphics.PreferredBackBufferHeight = 834;
+            graphics.PreferredBackBufferWidth = 1121;
 
             TESTprintTimer = 0;
         }
@@ -80,19 +87,25 @@ namespace WoPR
             tBorder0 = Content.Load<Texture2D>("Tborders_p0");
             tBorder1 = Content.Load<Texture2D>("Tborders_p1");
             tBorder2 = Content.Load<Texture2D>("Tborders_p2");
+            tBorderS = Content.Load<Texture2D>("TborderS");
 
             //tiles
             forest = Content.Load<Texture2D>("forest");
             plain = Content.Load<Texture2D>("plain");
             road = Content.Load<Texture2D>("road");
             water = Content.Load<Texture2D>("water");
+            barracks = Content.Load<Texture2D>("Barracks");
+            hq = Content.Load<Texture2D>("HQ");
+            supply = Content.Load<Texture2D>("Supply");
 
             //Unit Borders
             uBorder1 = Content.Load<Texture2D>("borders_p1");
             uBorder2 = Content.Load<Texture2D>("borders_p2");
 
             //Unit overlays
-
+            trooper = Content.Load<Texture2D>("trooper");
+            demo = Content.Load<Texture2D>("Demoman");
+            samT = Content.Load<Texture2D>("SamTroop");
 
         }
 
