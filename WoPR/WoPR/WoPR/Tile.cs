@@ -10,10 +10,6 @@ namespace WoPR
 {
     class Tile : Microsoft.Xna.Framework.DrawableGameComponent
     {
-        //coord conversion
-        //x' = size * 3/2 * x
-        //y' = size * sqrt(3) * (y + x/2)
-
         public enum TileType {plain, water, road, forest, headquarters, barracks, garage, supplyDepot};
         private const int MAXCHP = 10;
 
@@ -31,17 +27,6 @@ namespace WoPR
         private HexCoord position;   //x,y,z
         private Building build;
         private TileType t;
-
-        SpriteBatch spriteBatch;
-        Texture2D tBorder0 = null;
-        Texture2D tBorder1 = null;
-        Texture2D tBorder2 = null;
-        Texture2D forest = null;
-        Texture2D plain = null;
-        Texture2D road = null;
-        Texture2D water = null;
-        Texture2D uBorder1 = null;
-        Texture2D uBorder2 = null;
 
         public string type
         {
@@ -167,42 +152,8 @@ namespace WoPR
             capturehp = MAXCHP;
         }
 
-        protected override void LoadContent()
-        {
-            base.LoadContent();
-            spriteBatch = new SpriteBatch(Game.GraphicsDevice);
-
-            //Tile borders
-            tBorder0 = Game.Content.Load<Texture2D>("Tborders_p0");
-            tBorder1 = Game.Content.Load<Texture2D>("Tborders_p1");
-            tBorder2 = Game.Content.Load<Texture2D>("Tborders_p2");
-
-            //tiles
-            forest = Game.Content.Load<Texture2D>("forest");
-            plain = Game.Content.Load<Texture2D>("plain");
-            road = Game.Content.Load<Texture2D>("road");
-            water = Game.Content.Load<Texture2D>("water");
-
-            //Unit Borders
-            uBorder1 = Game.Content.Load<Texture2D>("borders_p1");
-            uBorder2 = Game.Content.Load<Texture2D>("borders_p2");
-
-            //Unit overlays
-
-        }
-
-        public override void Update(GameTime gameTime)
-        {
-            base.Update(gameTime);
-
-
-        }
-
-
-        public override void Draw(SpriteBatch batch, GameTime gt)
-        {
-            base.Draw(gt);
-            
+        public void Draw(SpriteBatch batch)
+        {            
             drawBorder(batch);
             drawTile(batch);
             drawUnitBorder(batch);
@@ -210,53 +161,77 @@ namespace WoPR
         }
                 private void drawBorder(SpriteBatch batch)
                 {
-                    batch.Begin(SpriteSortMode.Immediate, BlendState.AlphaBlend);
+                    if(Game.ui.currentSelection == position)
+                    {
 
-                    batch.Draw(tBorder0, convertToXY(), Color.White);
-
-                    batch.End();
-
+                    }
+                    else
+                    {                        
+                        batch.Draw(Game.tBorder0, convertToXY(), Color.White);
+                    }
                 }
                 private void drawTile(SpriteBatch batch)
                 {
-                    spriteBatch.Begin(SpriteSortMode.Immediate, BlendState.AlphaBlend);
 
-                    spriteBatch.Draw(plain, convertToXY(), Color.White);
+                    Vector2 temp = convertToXY();
+                    temp.X += 13;
+                    temp.Y += 9;
 
-                    spriteBatch.End();
+                    switch (t)
+                    {
+                        case TileType.plain:
+                            batch.Draw(Game.plain, temp, Color.White);
+                            break;
+
+                        case TileType.water:
+                            batch.Draw(Game.water, temp, Color.White);
+                            break;
+
+                        case TileType.road:
+                            batch.Draw(Game.road, temp, Color.White);
+                            break;
+
+                        case TileType.forest:
+                            batch.Draw(Game.forest, temp, Color.White);
+                            break;
+
+                        case TileType.headquarters:
+                            break;
+
+                        case TileType.barracks:
+                            break;
+
+                        case TileType.garage:
+                            break;
+
+                        case TileType.supplyDepot:
+                            break;
+                    }
                 }
                 private void drawUnitBorder(SpriteBatch batch)
                 {
                     if(unit != null)
                     {
-                        spriteBatch.Begin(SpriteSortMode.Immediate, BlendState.AlphaBlend);
-
-                        spriteBatch.Draw(uBorder1, convertToXY(), Color.White);
-
-                        spriteBatch.End();
+                        batch.Draw(Game.uBorder1, convertToXY(), Color.White);
                     }
                 }
                 private void drawUnit(SpriteBatch batch)
                 {
                     if (unit != null)
                     {
-                        spriteBatch.Begin(SpriteSortMode.Immediate, BlendState.AlphaBlend);
-
-                        spriteBatch.Draw(uBorder1, convertToXY(), Color.Red);
-
-                        spriteBatch.End();
+                        batch.Draw(Game.uBorder1, convertToXY(), Color.Red);
                     }
                 }
-
+        
         private Vector2 convertToXY()
         {
-            int[] temp = new int[2];
-            int x = 0;
-            int y = 0;
-            int size = 10;
+            float x = 0;
+            float y = 0;
 
-            x = (int)(size * position.x * 3 / 2);
-            y = (int)(size * Math.Sqrt(3) * (position.y + (position.x / 2)));
+            x = (120 * (float)position.x * (3 / 2));
+            y = (80 * (float)Math.Sqrt(3) * ((float)position.y + ((float)position.x / 2)));
+            x += 370;
+            y += 380;
 
             return new Vector2(x, y);
         }

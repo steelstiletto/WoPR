@@ -7,16 +7,11 @@ namespace WoPR
 {
     public class UI : Microsoft.Xna.Framework.DrawableGameComponent
     {
-
-        public enum InputType {menu, map};
-
         private Dictionary<string, Menu> menus;
         public string activeMenu;
         private SpriteBatch batch;
         private SpriteFont font;
         public bool displayMap;
-        public HexCoord currentSelection;
-        public InputType currentType;
         new public WoPR Game;
 
         public UI(Game game)
@@ -30,8 +25,6 @@ namespace WoPR
         private void initialize()
         {
             menus = new Dictionary<string, Menu>();
-            currentSelection = HexCoord.Zero;
-            currentType = InputType.menu;
         }
 
         protected override void LoadContent()
@@ -64,16 +57,6 @@ namespace WoPR
             // If there are no events, there is no need to proceed
             if (Game.player1.buttonEvents.Count == 0) return;
 
-            if (currentType == InputType.menu)
-                menuInput();
-            if (currentType == InputType.map)
-                return;
-
-            
-        }
-
-        private void menuInput()
-        {
             // Peek to view the top button event in player1's queue
             button currentEvent = Game.player1.buttonEvents.Peek();
 

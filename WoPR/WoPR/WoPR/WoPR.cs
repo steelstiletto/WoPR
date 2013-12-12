@@ -16,6 +16,17 @@ namespace WoPR
         public SimpleController player1;
         public Map currentMap;
 
+        //Textures
+        public Texture2D tBorder0 = null;
+        public Texture2D tBorder1 = null;
+        public Texture2D tBorder2 = null;
+        public Texture2D forest = null;
+        public Texture2D plain = null;
+        public Texture2D road = null;
+        public Texture2D water = null;
+        public Texture2D uBorder1 = null;
+        public Texture2D uBorder2 = null;
+
         private double TESTprintTimer;
 
         public WoPR()
@@ -30,6 +41,9 @@ namespace WoPR
             Components.Add(player1);
             testStuff();
             initializeMenus();
+            graphics.IsFullScreen = false;
+            graphics.PreferredBackBufferHeight = 1000;
+            graphics.PreferredBackBufferWidth = 1000;
 
             TESTprintTimer = 0;
         }
@@ -61,7 +75,25 @@ namespace WoPR
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            // TODO: use this.Content to load your game content here
+
+            //Tile borders
+            tBorder0 = Content.Load<Texture2D>("Tborders_p0");
+            tBorder1 = Content.Load<Texture2D>("Tborders_p1");
+            tBorder2 = Content.Load<Texture2D>("Tborders_p2");
+
+            //tiles
+            forest = Content.Load<Texture2D>("forest");
+            plain = Content.Load<Texture2D>("plain");
+            road = Content.Load<Texture2D>("road");
+            water = Content.Load<Texture2D>("water");
+
+            //Unit Borders
+            uBorder1 = Content.Load<Texture2D>("borders_p1");
+            uBorder2 = Content.Load<Texture2D>("borders_p2");
+
+            //Unit overlays
+
+
         }
 
         /// <summary>
@@ -131,6 +163,7 @@ namespace WoPR
         private void mainMenuSelection(string itemSelected)
         {
             if (itemSelected == "Exit") this.Exit();
+            if (itemSelected == "New Game") ui.displayMap = true;
         }
 
         private void TESTprintFunction()
