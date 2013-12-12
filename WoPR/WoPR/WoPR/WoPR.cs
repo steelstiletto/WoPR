@@ -12,7 +12,7 @@ namespace WoPR
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-        UI ui;
+        public UI ui;
         public SimpleController player1;
         public Map currentMap;
 
