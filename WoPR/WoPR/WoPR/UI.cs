@@ -83,8 +83,6 @@ namespace WoPR
                 currentEvent == button.A ||
                 currentEvent == button.B)
             {
-                Debug.Print("Menu Event!");
-                Game.player1.buttonEvents.Dequeue();
                 if (currentEvent == button.A)
                 {
                     Game.MenuSelection(activeMenu, menus[activeMenu].getSelected().Value);
@@ -100,8 +98,7 @@ namespace WoPR
                     menus[activeMenu].changeSelection(currentEvent);
                 }
             }
-            // Following is for testing while only the UI consumes buttons.
-            else { Game.player1.buttonEvents.Dequeue(); }
+            Game.player1.buttonEvents.Dequeue();
         }
 
         // Draw the active menu
