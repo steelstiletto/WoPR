@@ -180,19 +180,45 @@ namespace WoPR
             ui.addMenu(m, "mainMenu");
             ui.activeMenu = "mainMenu";
 
-            //Action list for infantry
+            //Action list for trooper
             m = new Menu(new Vector2(200, 200), new Vector2(200, 200), 1);
             m.addItem("Move");
-            m.addItem("Attack");
+            m.addItem("FlameThrower");
+            m.addItem("Rifle");
             m.addItem("Capture");
-            ui.addMenu(m, "InfantryMenu");
+            m.addItem("End Turn");
+            ui.addMenu(m, "trooperMenu");
+
+            //Action list for demolition squad
+            m = new Menu(new Vector2(200, 200), new Vector2(200, 200), 1);
+            m.addItem("Move");
+            m.addItem("Mortar");
+            m.addItem("Bazooka");
+            m.addItem("Capture");
+            m.addItem("End Turn");
+            ui.addMenu(m, "demolitionSquadMenu");
+
+            //Action list for SAM Infantry
+            m = new Menu(new Vector2(200, 200), new Vector2(200, 200), 1);
+            m.addItem("Move");
+            m.addItem("SAM Launcher");
+            m.addItem("Rifle");
+            m.addItem("Capture");
+            m.addItem("End Turn");
+            ui.addMenu(m, "samInfantryMenu");
 
             //Barracks Build Menu unit
             m = new Menu(new Vector2(200, 200), new Vector2(200, 200), 1);
             m.addItem("Trooper - 100");
             m.addItem("Demolition Squad - 200");
             m.addItem("Sam Trooper - 200");
-            ui.addMenu(m, "BarracksBuild");
+            m.addItem("End Turn");
+            ui.addMenu(m, "barracksMenu");
+
+            //Generic menu for an empty or enemy tile
+            m = new Menu(new Vector2(200, 200), new Vector2(200, 200), 1);
+            m.addItem("End Turn");
+            ui.addMenu(m, "endTurnMenu");
 
         }
 
