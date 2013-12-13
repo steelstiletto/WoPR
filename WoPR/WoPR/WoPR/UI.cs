@@ -88,8 +88,9 @@ namespace WoPR
                 if (pressedButton == button.A)
                 {
                     // If the event is a confirmation, select the active menu and then close the menu
-                    Game.MenuSelection(activeMenu, menus[activeMenu].getSelected().Value);
+                    string confirmedMenu = activeMenu;
                     activeMenu = null;
+                    Game.MenuSelection(confirmedMenu, menus[confirmedMenu].getSelected().Value);
                 }
                 else if (pressedButton == button.B)
                 {

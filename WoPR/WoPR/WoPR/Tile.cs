@@ -169,7 +169,7 @@ namespace WoPR
         }
                 private void drawBorder(SpriteBatch batch)
                 {
-                    if (Game.ui.currentSelection.Equals(position)) //if tile is selected us the highlight sprite
+                    if (position.Equals(Game.ui.currentSelection)) //if tile is selected us the highlight sprite
                     {
                         batch.Draw(Game.tBorderS, convertToXY(), Color.White);
                     }

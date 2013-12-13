@@ -50,7 +50,7 @@ namespace WoPR
             Components.Add(ui);
             players = new List<Player>();
             players.Add(new Player(true, new SimpleController(this, PlayerIndex.One)));
-            players.Add(new Player(false, new SimpleController(this, PlayerIndex.Two)));
+            players.Add(new Player(false, new SimpleController(this, PlayerIndex.One)));
             Components.Add(players[0].controller);
             Components.Add(players[1].controller);
             currentPlayerIndex = 0;
@@ -169,6 +169,14 @@ namespace WoPR
                 case "mainMenu":
                     mainMenuSelection(itemSelected);
                     break;
+                case "trooperMenu":
+                case "demolitionSquadMenu":
+                case "samInfantryMenu":
+                    unitMenuSelection(itemSelected);
+                    break;
+                case "endTurnMenu":
+                    endTurn();
+                    break;
                 default:
                     break;
             }
@@ -176,6 +184,19 @@ namespace WoPR
 
         public void MapSelection(Tile selectedTile)
         {
+            ui.currentType = UI.InputType.menu;
+            if (selectedTile.unit != null && selectedTile.unit.getOwner() == currentPlayer)
+            {
+                ui.activeMenu = "trooperMenu";
+                return;
+            }
+            bool buildable = false;
+            if (buildable)
+            {
+                ui.activeMenu = "barracksMenu";
+                return;
+            }
+            ui.activeMenu = "endTurnMenu";
         }
 
         private void initializeMenus()
@@ -234,6 +255,10 @@ namespace WoPR
             if (itemSelected == "New Game") ui.displayMap = true;
         }
 
+        private void unitMenuSelection(string itemSelected)
+        {
+        }
+
         private void TESTprintFunction()
         {
         }
@@ -242,6 +267,11 @@ namespace WoPR
         {
             currentPlayerIndex++;
             currentPlayerIndex %= players.Count;
+        }
+
+        public void endTurn()
+        {
+            incrementPlayer();
         }
     }
 }
