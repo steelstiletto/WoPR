@@ -445,7 +445,19 @@ namespace WoPR
             }
             if (itemSelected == "Capture")
             {
-                endTurn();
+                if (currentMap.tiles[ui.currentSelection].owner != currentPlayer && currentMap.tiles[ui.currentSelection].isCapturable())
+                {
+                    currentMap.tiles[ui.currentSelection].Capture(currentMap.tiles[ui.currentSelection].getUnit());
+                    if (currentMap.tiles[ui.currentSelection].owner == currentPlayer)
+                    {
+                        foreach (HexCoord neighbor in ui.currentSelection.neighbors())
+                        {
+                            if (!currentMap.tiles.ContainsKey(neighbor))
+                                continue;
+                            currentMap.tiles[neighbor].owner = currentPlayer;
+                        }
+                    }
+                }
             }
             if (itemSelected == "End Turn")
             {
@@ -473,6 +485,13 @@ namespace WoPR
             {
                 u.acted = false;
                 u.moved = false;
+            }
+            foreach (KeyValuePair<HexCoord, Tile> pair in currentMap.tiles)
+            {
+                if (pair.Value.isCapturable())
+                {
+                    pair.Value.healCaptureHp(1);
+                }
             }
             incrementPlayer();
             startTurn();

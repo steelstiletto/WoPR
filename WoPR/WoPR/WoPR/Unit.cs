@@ -46,7 +46,7 @@ namespace WoPR
                 //infantry
                 case unitType.trooper:
                     cost = 100;
-                    movementSpeed = 4;
+                    movementSpeed = 2;
                     armor = 0.3;
                     armorT = armorType.infantry;
                     moveT = moveType.foot;
@@ -56,7 +56,7 @@ namespace WoPR
 
                 case unitType.demolitionSquad:
                     cost = 200;
-                    movementSpeed = 3;
+                    movementSpeed = 1;
                     armor = 0.35;
                     armorT = armorType.infantry;
                     moveT = moveType.foot;
@@ -66,7 +66,7 @@ namespace WoPR
 
                 case unitType.samTrooper:
                     cost = 200;
-                    movementSpeed = 3;
+                    movementSpeed = 1;
                     armor = 0.3;
                     armorT = armorType.infantry;
                     moveT = moveType.foot;
