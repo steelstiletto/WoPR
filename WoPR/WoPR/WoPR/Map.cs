@@ -108,6 +108,27 @@ namespace WoPR
             /*CHANGED CHANGED CHANGED CHANGED*/
         }
 
+        public bool move(HexCoord a, HexCoord b)
+        {
+            Tile tempA;
+            Tile tempB;
+            if (tiles.TryGetValue(a, out tempA))
+            {
+                if(tiles.TryGetValue(b, out tempB))
+                {
+                    if(tempA.getUnit() != null)
+                    {
+                        if (tempB.getUnit() == null)
+                        {
+                            tempB.unit = tempA.unit;
+                            tempA.unit = null;
+                        }
+                    }
+                }
+            }
+            return false;
+        }
+
         public List<Tile> getLegalMoves(Tile t)
         {
             List<Tile> temp = new List<Tile>();
@@ -170,6 +191,76 @@ namespace WoPR
                 
             }
             return list;
+        }
+
+        public List<Tile> getLegalAttacks(Tile t, bool isPrimaryAttack)
+        {
+            List<Tile> temp = new List<Tile>();
+            List<HexCoord> adjacent = t.getPosition().neighbors();
+            Tile current;
+            Attack a;
+
+            if (t.getUnit() != null)
+            {
+                if (isPrimaryAttack)
+                {
+                    a = t.getUnit().getPrimaryAttack();
+                }
+                else
+                {
+                    a = t.getUnit().getSecondaryAttack();
+                }
+            }
+            else
+            {
+                return temp;
+            }
+
+            if (a.getRange() == 0)
+            {
+                foreach (HexCoord h in adjacent)
+                {
+                    tiles.TryGetValue(h, out current);
+                    if (current != null)
+                    {
+                        if (current.getUnit() != null)
+                        {
+                            if (current.getUnit().attackable(a))
+                            {
+                                temp.Add(current);
+                            }
+                        }
+                    }
+                }
+            }
+            else
+            {
+                temp = findRangedTargets(temp, a.getRange(), t);
+            }
+            
+            return temp;
+        }
+
+        public List<Tile> findRangedTargets(List<Tile> temp, int rangeRemaining, Tile t)
+        {
+            rangeRemaining--;            
+            List<HexCoord> adjacent = t.getPosition().neighbors();
+            if(!temp.Contains(t))
+            {
+                temp.Add(t);
+            }
+            if(rangeRemaining > 0)
+            {
+                foreach (HexCoord h in adjacent)
+                {
+                    tiles.TryGetValue(h, out t);
+                    if (t != null)
+                    {
+                        temp = findRangedTargets(temp, rangeRemaining, t);
+                    }
+                }
+            }
+            return temp;
         }
     }
 }

@@ -282,7 +282,7 @@ namespace WoPR
                     }
                     break;
             }
-            return valid;
+            return !valid;
         }
         //returns if the unit is dead
         public bool isDead()

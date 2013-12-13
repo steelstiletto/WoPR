@@ -228,6 +228,8 @@ namespace WoPR
                 private void drawUnitBorder(SpriteBatch batch)
                 {
                     Vector2 temp = convertToXY();
+                    temp.X += 45;
+                    temp.Y += 9;
 
                     if(unit != null)
                     {
@@ -242,8 +244,10 @@ namespace WoPR
                     }
                 }
                 private void drawUnit(SpriteBatch batch)
-                {                    
+                {
                     Vector2 temp = convertToXY();
+                    temp.X += 49;
+                    temp.Y += 13;
 
                     if (unit != null)
                     {
@@ -254,15 +258,15 @@ namespace WoPR
                             switch (t)
                             {
                                 case Unit.unitType.trooper:
-                                    batch.Draw(Game.plain, temp, Color.Red);
+                                    batch.Draw(Game.trooper, temp, Color.Red);
                                     break;
 
                                 case Unit.unitType.demolitionSquad:
-                                    batch.Draw(Game.water, temp, Color.Red);
+                                    batch.Draw(Game.demo, temp, Color.Red);
                                     break;
 
                                 case Unit.unitType.samTrooper:
-                                    batch.Draw(Game.road, temp, Color.Red);
+                                    batch.Draw(Game.samT, temp, Color.Red);
                                     break;
                             }
                         }
@@ -271,15 +275,15 @@ namespace WoPR
                             switch (t)
                             {
                                 case Unit.unitType.trooper:
-                                    batch.Draw(Game.plain, temp, Color.Blue);
+                                    batch.Draw(Game.trooper, temp, Color.Blue);
                                     break;
 
                                 case Unit.unitType.demolitionSquad:
-                                    batch.Draw(Game.water, temp, Color.Blue);
+                                    batch.Draw(Game.demo, temp, Color.Blue);
                                     break;
 
                                 case Unit.unitType.samTrooper:
-                                    batch.Draw(Game.road, temp, Color.Blue);
+                                    batch.Draw(Game.samT, temp, Color.Blue);
                                     break;
                             }
                         }
