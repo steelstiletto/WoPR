@@ -154,7 +154,7 @@ namespace WoPR
         public override void Draw(GameTime gameTime)
         {
             base.Draw(gameTime);
-            batch.Begin(SpriteSortMode.FrontToBack, BlendState.AlphaBlend);
+            batch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend);
             if (displayMap) Game.currentMap.draw(batch);
             if(activeMenu != null) menus[activeMenu].draw(batch, font);
             batch.End();
