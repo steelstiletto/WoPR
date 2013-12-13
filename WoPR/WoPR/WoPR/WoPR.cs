@@ -19,6 +19,9 @@ namespace WoPR
         public Player currentPlayer { get { return players[currentPlayerIndex]; } }
         public SimpleController currentPlayerController { get { return players[currentPlayerIndex].controller; } }
         public Map currentMap;
+        public List<Tile> subSelection;
+        public Tile activeTile;
+        
 
         //Textures
         public Texture2D tBorder0 = null;
@@ -38,6 +41,7 @@ namespace WoPR
         public Texture2D trooper = null;
         public Texture2D demo = null;
         public Texture2D samT = null;
+        public Texture2D uOverlay = null;
         public Texture2D hudBackplate = null;
 
         private double TESTprintTimer;
@@ -61,6 +65,8 @@ namespace WoPR
             graphics.IsFullScreen = false;
             graphics.PreferredBackBufferHeight = 834;
             graphics.PreferredBackBufferWidth = 1121;
+            subSelection = null;
+            activeTile = null;
 
             TESTprintTimer = 0;
         }
@@ -112,6 +118,7 @@ namespace WoPR
             //Unit Borders
             uBorder1 = Content.Load<Texture2D>("borders_p1");
             uBorder2 = Content.Load<Texture2D>("borders_p2");
+            uOverlay = Content.Load<Texture2D>("unitOverlay");
 
             //Unit overlays
             trooper = Content.Load<Texture2D>("trooper");
@@ -192,31 +199,55 @@ namespace WoPR
         public void MapSelection(Tile selectedTile)
         {
             ui.currentType = UI.InputType.menu;
-            if (selectedTile.unit != null && selectedTile.unit.getOwner() == currentPlayer)
+            if (subSelection == null)
             {
-                switch (selectedTile.unit.t)
+                if (selectedTile.unit != null && selectedTile.unit.getOwner() == currentPlayer)
                 {
-                    case Unit.unitType.trooper:
-                        ui.activeMenu = "trooperMenu";
-                        break;
+                    switch (selectedTile.unit.t)
+                    {
+                        case Unit.unitType.trooper:
+                            ui.activeMenu = "trooperMenu";
+                            break;
 
-                    case Unit.unitType.demolitionSquad:
-                        ui.activeMenu = "demolitionSquadMenu";
-                        break;
+                        case Unit.unitType.demolitionSquad:
+                            ui.activeMenu = "demolitionSquadMenu";
+                            break;
 
-                    case Unit.unitType.samTrooper:
-                        ui.activeMenu = "samInfantryMenu";
-                        break;
+                        case Unit.unitType.samTrooper:
+                            ui.activeMenu = "samInfantryMenu";
+                            break;
+
+                    }
+                    return;
+                }
+                if (selectedTile.buildable())
+                {
+                    ui.activeMenu = "barracksMenu";
+                    return;
+                }
+                ui.activeMenu = "endTurnMenu";
+            }
+            else
+            {
+                if (selectedTile.highlight == Tile.Highlight.blue)
+                {
+                    if (selectedTile.unit == null)
+                    {
+                        currentMap.move(activeTile.getPosition(), selectedTile.getPosition());
+                        activeTile = null;
+                        foreach (Tile t in subSelection)
+                        {
+                            t.highlight = Tile.Highlight.none;
+                        }
+                        subSelection = null;
+                        selectedTile.unit.moved = true;
+                    }
+                }
+                if (selectedTile.highlight == Tile.Highlight.orange)
+                {
 
                 }
-                return;
             }
-            if (selectedTile.buildable())
-            {
-                ui.activeMenu = "barracksMenu";
-                return;
-            }
-            ui.activeMenu = "endTurnMenu";
         }
 
         private void initializeMenus()
@@ -288,6 +319,7 @@ namespace WoPR
                         if(currentPlayer.spendResources(100))
                         {
                             temp.unit = new Unit(Unit.unitType.trooper, currentPlayer);
+                            currentPlayer.unitList.Add(temp.unit);
                         }
                         else
                         {
@@ -306,6 +338,7 @@ namespace WoPR
                         if (currentPlayer.spendResources(200))
                         {
                             temp.unit = new Unit(Unit.unitType.demolitionSquad, currentPlayer);
+                            currentPlayer.unitList.Add(temp.unit);
                         }
                         else
                         {
@@ -323,6 +356,7 @@ namespace WoPR
                         if (currentPlayer.spendResources(200))
                         {
                             temp.unit = new Unit(Unit.unitType.samTrooper, currentPlayer);
+                            currentPlayer.unitList.Add(temp.unit);
                         }
                         else
                         {
@@ -346,9 +380,14 @@ namespace WoPR
             {
                 currentMap.tiles.TryGetValue(ui.currentSelection, out cTile);
                 tiles = currentMap.getLegalMoves(cTile);
-                foreach (Tile t in tiles)
+                if (!cTile.unit.moved == true)
                 {
-                    t.highlight = Tile.Highlight.blue;
+                    foreach (Tile t in tiles)
+                    {
+                        t.highlight = Tile.Highlight.blue;
+                    }
+                    subSelection = tiles;
+                    activeTile = cTile;
                 }
             }
             if (itemSelected == "Rifle" || itemSelected == "Mortar" || itemSelected == "SAM Launcher")
@@ -359,10 +398,19 @@ namespace WoPR
                 {
                     t.highlight = Tile.Highlight.orange;
                 }
+                subSelection = tiles;
+                activeTile = cTile;
             }
             if (itemSelected == "Flamethrower" || itemSelected == "Bazooka" || itemSelected == "Rifle")
             {
-                endTurn();
+                currentMap.tiles.TryGetValue(ui.currentSelection, out cTile);
+                tiles = currentMap.getLegalAttacks(cTile, false);
+                foreach (Tile t in tiles)
+                {
+                    t.highlight = Tile.Highlight.orange;
+                }
+                subSelection = tiles;
+                activeTile = cTile;
             }
             if (itemSelected == "Capture")
             {
@@ -389,6 +437,11 @@ namespace WoPR
             foreach (Player p in players)
             {
                 p.controller.clearQueue();
+            }
+            foreach (Unit u in currentPlayer.unitList)
+            {
+                u.acted = false;
+                u.moved = false;
             }
             incrementPlayer();
             currentPlayer.grantIncome(300);

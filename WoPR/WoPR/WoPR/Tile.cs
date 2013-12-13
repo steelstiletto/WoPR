@@ -158,6 +158,7 @@ namespace WoPR
             drawTile(batch);
             drawUnitBorder(batch);
             drawUnit(batch);
+            drawUnitOverlay(batch);
             drawOverlay(batch);
         }
                 private void drawBorder(SpriteBatch batch)
@@ -288,6 +289,21 @@ namespace WoPR
                     }
                 }
 
+                private void drawUnitOverlay(SpriteBatch batch)
+                {
+                    Vector2 temp = convertToXY();
+                    temp.X += 45;
+                    temp.Y += 9;
+
+                    if (unit != null && unit.acted)
+                    {
+                        batch.Draw(Game.uOverlay, temp, Color.Black * 0.5f);
+                    }
+                    if (unit != null && unit.moved)
+                    {
+                        batch.Draw(Game.uOverlay, temp, Color.Black * 0.5f);
+                    }
+                }
         private void drawOverlay(SpriteBatch batch)
         {
             Vector2 temp = convertToXY();

@@ -18,6 +18,8 @@ namespace WoPR
         private int movementSpeed;
         private int movementPoints;
         private double armor;
+        public bool moved;
+        public bool acted;
 
         private armorType armorT;
         private moveType moveT;
@@ -35,6 +37,8 @@ namespace WoPR
             hp = 100;
             owner = p;
             t = type;
+            moved = true;
+            acted = true;
 
             //switch to set stats based on given type
             switch (type)
