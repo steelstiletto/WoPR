@@ -111,5 +111,18 @@ namespace WoPR
             }
             /*CHANGED CHANGED CHANGED CHANGED*/
         }
+
+        public List<Tile> getLegalMoves(Unit u, Tile t)
+        {
+            List<Tile> temp = new List<Tile>();
+
+            return temp;
+        }
+        private List<Tile> getAdjacent(Tile t)
+        {
+            List<Tile> temp = new List<Tile>();
+
+            return temp;
+        }
     }
 }

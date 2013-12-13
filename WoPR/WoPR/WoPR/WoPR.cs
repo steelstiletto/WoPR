@@ -180,6 +180,20 @@ namespace WoPR
             ui.addMenu(m, "mainMenu");
             ui.activeMenu = "mainMenu";
 
+            //Action list for infantry
+            m = new Menu(new Vector2(200, 200), new Vector2(200, 200), 1);
+            m.addItem("Move");
+            m.addItem("Attack");
+            m.addItem("Capture");
+            ui.addMenu(m, "InfantryMenu");
+
+            //Barracks Build Menu unit
+            m = new Menu(new Vector2(200, 200), new Vector2(200, 200), 1);
+            m.addItem("Trooper - 100");
+            m.addItem("Demolition Squad - 200");
+            m.addItem("Sam Trooper - 200");
+            ui.addMenu(m, "BarracksBuild");
+
         }
 
         private void mainMenuSelection(string itemSelected)
