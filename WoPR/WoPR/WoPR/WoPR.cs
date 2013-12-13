@@ -177,6 +177,9 @@ namespace WoPR
                 case "endTurnMenu":
                     endTurn();
                     break;
+                case "barracksMenu":
+                    barracksMenuSelection(itemSelected);
+                    break;
                 default:
                     break;
             }
@@ -187,7 +190,21 @@ namespace WoPR
             ui.currentType = UI.InputType.menu;
             if (selectedTile.unit != null && selectedTile.unit.getOwner() == currentPlayer)
             {
-                ui.activeMenu = "trooperMenu";
+                switch (selectedTile.unit.t)
+                {
+                    case Unit.unitType.trooper:
+                        ui.activeMenu = "trooperMenu";
+                        break;
+
+                    case Unit.unitType.demolitionSquad:
+                        ui.activeMenu = "demolitionSquadMenu";
+                        break;
+
+                    case Unit.unitType.samTrooper:
+                        ui.activeMenu = "samInfantryMenu";
+                        break;
+
+                }
                 return;
             }
             if (selectedTile.buildable())
@@ -254,8 +271,103 @@ namespace WoPR
             if (itemSelected == "New Game") ui.displayMap = true;
         }
 
+        private void barracksMenuSelection(string itemSelected)
+        {
+            Tile temp;
+
+            if (itemSelected == "Trooper - 100")
+            {
+                currentMap.tiles.TryGetValue(ui.currentSelection, out temp);
+                {
+                    if(temp.unit == null)
+                    {
+                        if(currentPlayer.spendResources(100))
+                        {
+                            temp.unit = new Unit(Unit.unitType.trooper, currentPlayer);
+                        }
+                        else
+                        {
+                            //ERROR MSG NOT ENOUGH MONEY
+                        }
+                    }
+                }
+            }
+
+            if (itemSelected == "Demolition Squad - 200")
+            {
+                currentMap.tiles.TryGetValue(ui.currentSelection, out temp);
+                {
+                    if (temp.unit == null)
+                    {
+                        if (currentPlayer.spendResources(200))
+                        {
+                            temp.unit = new Unit(Unit.unitType.demolitionSquad, currentPlayer);
+                        }
+                        else
+                        {
+                            //ERROR MSG NOT ENOUGH MONEY
+                        }
+                    }
+                }
+            }
+            if (itemSelected == "Sam Trooper - 200")
+            {
+                currentMap.tiles.TryGetValue(ui.currentSelection, out temp);
+                {
+                    if (temp.unit == null)
+                    {
+                        if (currentPlayer.spendResources(200))
+                        {
+                            temp.unit = new Unit(Unit.unitType.samTrooper, currentPlayer);
+                        }
+                        else
+                        {
+                            //ERROR MSG NOT ENOUGH MONEY
+                        }
+                    }
+                }
+            }
+            if (itemSelected == "End Turn")
+            {
+                endTurn();
+            }
+        }
+
         private void unitMenuSelection(string itemSelected)
         {
+            List<Tile> tiles;
+            Tile cTile;
+
+            if (itemSelected == "Move")
+            {
+                currentMap.tiles.TryGetValue(ui.currentSelection, out cTile);
+                tiles = currentMap.getLegalMoves(cTile);
+                foreach (Tile t in tiles)
+                {
+                    t.highlight = Tile.Highlight.blue;
+                }
+            }
+            if (itemSelected == "Rifle" || itemSelected == "Mortar" || itemSelected == "SAM Launcher")
+            {
+                currentMap.tiles.TryGetValue(ui.currentSelection, out cTile);
+                tiles = currentMap.getLegalAttacks(cTile, true);
+                foreach (Tile t in tiles)
+                {
+                    t.highlight = Tile.Highlight.orange;
+                }
+            }
+            if (itemSelected == "Flamethrower" || itemSelected == "Bazooka" || itemSelected == "Rifle")
+            {
+                endTurn();
+            }
+            if (itemSelected == "Capture")
+            {
+                endTurn();
+            }
+            if (itemSelected == "End Turn")
+            {
+                endTurn();
+            }
         }
 
         private void TESTprintFunction()
@@ -270,7 +382,12 @@ namespace WoPR
 
         public void endTurn()
         {
+            foreach (Player p in players)
+            {
+                p.controller.clearQueue();
+            }
             incrementPlayer();
+            currentPlayer.grantIncome(300);
         }
     }
 }

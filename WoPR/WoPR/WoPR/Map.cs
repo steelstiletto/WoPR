@@ -153,7 +153,14 @@ namespace WoPR
             foreach (HexCoord h in adjacent)
             {
                 tiles.TryGetValue(h, out temp);
-                moveCosts = temp.getMoveCosts();
+                if (temp != null)
+                {
+                    moveCosts = temp.getMoveCosts();
+                }
+                else
+                {
+                    moveCosts = new int[] { -1, -1, -1 };
+                }
                 switch(m)
                 {
                     case Unit.moveType.foot:

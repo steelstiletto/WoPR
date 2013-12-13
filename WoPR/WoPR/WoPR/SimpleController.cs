@@ -161,5 +161,10 @@ namespace WoPR
             previous = current;
         }
 
+        public void clearQueue()
+        {
+            buttonEvents.Clear();
+        }
+
     }
 }
