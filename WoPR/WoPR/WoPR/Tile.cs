@@ -143,6 +143,7 @@ namespace WoPR
             if (capturehp <= 0)
             {
                 owner = u.getOwner();
+                capturehp = 3;
                 return true;
             }
             return false;
@@ -369,6 +370,10 @@ namespace WoPR
         public int getCaptureHp()
         {
             return capturehp;
+        }
+        public void healCaptureHp(int amount)
+        {
+            capturehp = Math.Min(capturehp + amount, MAXCHP);
         }
         public double getDBonus()
         {
