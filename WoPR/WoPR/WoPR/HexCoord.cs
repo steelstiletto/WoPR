@@ -36,6 +36,18 @@ namespace WoPR
             y += Y;
         }
 
+        public System.Collections.Generic.List<HexCoord> neighbors()
+        {
+            System.Collections.Generic.List<HexCoord> neighborsList = new System.Collections.Generic.List<HexCoord>();
+            neighborsList.Add(this + HexCoord.Up);
+            neighborsList.Add(this + HexCoord.UpLeft);
+            neighborsList.Add(this + HexCoord.UpRight);
+            neighborsList.Add(this + HexCoord.Down);
+            neighborsList.Add(this + HexCoord.DownLeft);
+            neighborsList.Add(this + HexCoord.DownRight);
+            return neighborsList;
+        }
+
         public override bool Equals(object obj)
         {
             HexCoord h = obj as HexCoord;
