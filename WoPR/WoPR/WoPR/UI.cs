@@ -118,6 +118,19 @@ namespace WoPR
             }
 
             // Else assume a direction change is emminent
+            if (pressedButton == button.B)
+            {
+                if (Game.subSelection != null)
+                {
+                    foreach (Tile t in Game.subSelection)
+                    {
+                        t.highlight = Tile.Highlight.none;
+                    }
+                }
+                Game.activeTile = null;
+                Game.subSelection = null;
+                return;
+            }
             HexCoord target = currentSelection;
 
             // Set the target to a niave location
