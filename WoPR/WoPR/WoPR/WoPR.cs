@@ -168,6 +168,10 @@ namespace WoPR
             }
         }
 
+        public void MapSelection(Tile selectedTile)
+        {
+        }
+
         private void initializeMenus()
         {
             Menu m = new Menu(new Vector2(200, 200), new Vector2(200, 200), 1);

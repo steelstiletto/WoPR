@@ -10,7 +10,7 @@ namespace WoPR
 {
     public class Map
     {
-        private Dictionary<HexCoord, Tile> tiles;
+        public Dictionary<HexCoord, Tile> tiles;
         
         /* CHANGED*/private WoPR WoPR;/* CHANGED*/
 

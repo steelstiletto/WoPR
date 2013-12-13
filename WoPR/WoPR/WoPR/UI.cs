@@ -64,11 +64,14 @@ namespace WoPR
             // If there are no events, there is no need to proceed
             if (Game.players[0].controller.buttonEvents.Count == 0) return;
 
+            // If no menu is active, assume that we should be accepting Map input
+            if (activeMenu == null) currentType = InputType.map;
+
             button pressedButton = Game.players[0].controller.buttonEvents.Dequeue();
 
             if (currentType == InputType.menu && activeMenu != null)
                 menuInput(pressedButton);
-            if (currentType == InputType.map)
+            else if (currentType == InputType.map)
                 mapInput(pressedButton);
 
             
@@ -103,6 +106,46 @@ namespace WoPR
 
         private void mapInput(button pressedButton)
         {
+            // If the button pressed is A, confirm the selection and send it to the game.
+            if (pressedButton == button.A)
+            {
+                Game.MapSelection(Game.currentMap.tiles[currentSelection]);
+                return;
+            }
+
+            // Else assume a direction change is emminent
+            HexCoord target = currentSelection;
+
+            // Set the target to a niave location
+            if (pressedButton == button.up)
+                target += HexCoord.Up;
+            if (pressedButton == button.down)
+                target += HexCoord.Down;
+            if (pressedButton == button.left)
+                target += HexCoord.DownLeft;
+            if (pressedButton == button.right)
+                target += HexCoord.UpRight;
+
+            // If the location is valid, make it the current selection and return
+            if (Game.currentMap.tiles.ContainsKey(target))
+            {
+                currentSelection = target;
+                return;
+            }
+
+            // Else if the direction is to the side, try the other option
+            target = currentSelection;
+            if (pressedButton == button.left)
+                target += HexCoord.UpLeft;
+            if (pressedButton == button.right)
+                target += HexCoord.DownRight;
+
+            // And check to move the selection one last time
+            if (Game.currentMap.tiles.ContainsKey(target))
+            {
+                currentSelection = target;
+                return;
+            }
 
         }
 
