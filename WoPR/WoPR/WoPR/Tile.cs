@@ -30,11 +30,6 @@ namespace WoPR
         private TileType t;
         public Highlight highlight;
 
-        public string type
-        {
-            get { return t.ToString(); }
-        }
-
         public Tile(Game game, TileType Type, HexCoord xyz)
             : base(game)
         {
@@ -360,6 +355,30 @@ namespace WoPR
         public HexCoord getPosition()
         {
             return position;
+        }
+
+        public bool buildable()
+        {
+            // If the active player is not in control, or the tile is occupied, return
+            if (owner != Game.currentPlayer || unit != null) return false;
+
+            // If this is a barracks, it can be built on
+            if (this.getType() == TileType.barracks) return true;
+
+            // Check neighbors for friendly barracks
+            foreach(HexCoord h in position.neighbors())
+            {
+                if(Game.currentMap.tiles.ContainsKey(h))
+                {
+                    Tile target = Game.currentMap.tiles[h];
+                    if (target.owner == owner)
+                        if (target.getType() == TileType.barracks)
+                            return true;
+                }
+            }
+
+            // If all else has failed, this tile cannot be built on.
+            return false;
         }
     }
 }

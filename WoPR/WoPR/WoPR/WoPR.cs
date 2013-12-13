@@ -190,8 +190,7 @@ namespace WoPR
                 ui.activeMenu = "trooperMenu";
                 return;
             }
-            bool buildable = false;
-            if (buildable)
+            if (selectedTile.buildable())
             {
                 ui.activeMenu = "barracksMenu";
                 return;

@@ -96,10 +96,6 @@ namespace WoPR
                     tiles.Add(position, currentTile);
                 } while (reader.ReadToNextSibling("coord"));
             }
-            foreach (KeyValuePair<HexCoord, Tile> pair in tiles)
-            {
-                Debug.Print(pair.Value.type + " " + pair.Key);
-            }
         }
 
         public void draw(SpriteBatch batch)

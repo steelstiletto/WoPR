@@ -7,8 +7,8 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Terran-Tower\Desktop\Proj\WoPR\WoPR\WoPR\bin\x86\Debug\Content\gameFont.xnb</Output>
-      <Time>2013-12-12T14:36:37.2561615-06:00</Time>
+      <Output>C:\Users\steel_000\Desktop\WoPR\WoPR\WoPR\WoPR\bin\x86\Debug\Content\gameFont.xnb</Output>
+      <Time>2013-12-11T15:13:35.448444-06:00</Time>
     </Item>
     <Item>
       <Source>borders_p1.png</Source>
@@ -16,8 +16,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Terran-Tower\Desktop\Proj\WoPR\WoPR\WoPR\bin\x86\Debug\Content\borders_p1.xnb</Output>
-      <Time>2013-12-12T14:36:37.2511613-06:00</Time>
+      <Output>C:\Users\steel_000\Desktop\WoPR\WoPR\WoPR\WoPR\bin\x86\Debug\Content\borders_p1.xnb</Output>
+      <Time>2013-12-12T00:54:29.1794181-06:00</Time>
     </Item>
     <Item>
       <Source>borders_p2.png</Source>
@@ -25,8 +25,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Terran-Tower\Desktop\Proj\WoPR\WoPR\WoPR\bin\x86\Debug\Content\borders_p2.xnb</Output>
-      <Time>2013-12-12T14:36:37.2531614-06:00</Time>
+      <Output>C:\Users\steel_000\Desktop\WoPR\WoPR\WoPR\WoPR\bin\x86\Debug\Content\borders_p2.xnb</Output>
+      <Time>2013-12-12T00:54:55.9003067-06:00</Time>
     </Item>
     <Item>
       <Source>plain.png</Source>
@@ -34,8 +34,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Terran-Tower\Desktop\Proj\WoPR\WoPR\WoPR\bin\x86\Debug\Content\plain.xnb</Output>
-      <Time>2013-12-12T14:36:37.2701623-06:00</Time>
+      <Output>C:\Users\steel_000\Desktop\WoPR\WoPR\WoPR\WoPR\bin\x86\Debug\Content\plain.xnb</Output>
+      <Time>2013-12-12T00:54:55.9023085-06:00</Time>
     </Item>
     <Item>
       <Source>road.png</Source>
@@ -43,8 +43,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Terran-Tower\Desktop\Proj\WoPR\WoPR\WoPR\bin\x86\Debug\Content\road.xnb</Output>
-      <Time>2013-12-12T14:36:37.2791629-06:00</Time>
+      <Output>C:\Users\steel_000\Desktop\WoPR\WoPR\WoPR\WoPR\bin\x86\Debug\Content\road.xnb</Output>
+      <Time>2013-12-12T00:54:55.9023085-06:00</Time>
     </Item>
     <Item>
       <Source>Tborders_p0.png</Source>
@@ -52,8 +52,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Terran-Tower\Desktop\Proj\WoPR\WoPR\WoPR\bin\x86\Debug\Content\Tborders_p0.xnb</Output>
-      <Time>2013-12-12T14:36:37.247161-06:00</Time>
+      <Output>C:\Users\steel_000\Desktop\WoPR\WoPR\WoPR\WoPR\bin\x86\Debug\Content\Tborders_p0.xnb</Output>
+      <Time>2013-12-12T00:54:55.8983043-06:00</Time>
     </Item>
     <Item>
       <Source>Tborders_p1.png</Source>
@@ -61,8 +61,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Terran-Tower\Desktop\Proj\WoPR\WoPR\WoPR\bin\x86\Debug\Content\Tborders_p1.xnb</Output>
-      <Time>2013-12-12T14:36:37.2491611-06:00</Time>
+      <Output>C:\Users\steel_000\Desktop\WoPR\WoPR\WoPR\WoPR\bin\x86\Debug\Content\Tborders_p1.xnb</Output>
+      <Time>2013-12-12T00:54:55.8993045-06:00</Time>
     </Item>
     <Item>
       <Source>Tborders_p2.png</Source>
@@ -70,8 +70,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Terran-Tower\Desktop\Proj\WoPR\WoPR\WoPR\bin\x86\Debug\Content\Tborders_p2.xnb</Output>
-      <Time>2013-12-12T14:36:37.2501612-06:00</Time>
+      <Output>C:\Users\steel_000\Desktop\WoPR\WoPR\WoPR\WoPR\bin\x86\Debug\Content\Tborders_p2.xnb</Output>
+      <Time>2013-12-12T00:54:55.9003067-06:00</Time>
     </Item>
     <Item>
       <Source>water.png</Source>
@@ -79,8 +79,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Terran-Tower\Desktop\Proj\WoPR\WoPR\WoPR\bin\x86\Debug\Content\water.xnb</Output>
-      <Time>2013-12-12T14:36:37.2831631-06:00</Time>
+      <Output>C:\Users\steel_000\Desktop\WoPR\WoPR\WoPR\WoPR\bin\x86\Debug\Content\water.xnb</Output>
+      <Time>2013-12-12T00:54:46.5956181-06:00</Time>
     </Item>
     <Item>
       <Source>Demoman.png</Source>
@@ -88,8 +88,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Terran-Tower\Desktop\Proj\WoPR\WoPR\WoPR\bin\x86\Debug\Content\Demoman.xnb</Output>
-      <Time>2013-12-12T14:36:37.2331602-06:00</Time>
+      <Output>C:\Users\steel_000\Desktop\WoPR\WoPR\WoPR\WoPR\bin\x86\Debug\Content\Demoman.xnb</Output>
+      <Time>2013-12-12T14:28:59.5174558-06:00</Time>
     </Item>
     <Item>
       <Source>forest.png</Source>
@@ -97,8 +97,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Terran-Tower\Desktop\Proj\WoPR\WoPR\WoPR\bin\x86\Debug\Content\forest.xnb</Output>
-      <Time>2013-12-12T14:36:37.2551615-06:00</Time>
+      <Output>C:\Users\steel_000\Desktop\WoPR\WoPR\WoPR\WoPR\bin\x86\Debug\Content\forest.xnb</Output>
+      <Time>2013-12-12T14:28:59.5244646-06:00</Time>
     </Item>
     <Item>
       <Source>SamTroop.png</Source>
@@ -106,8 +106,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Terran-Tower\Desktop\Proj\WoPR\WoPR\WoPR\bin\x86\Debug\Content\SamTroop.xnb</Output>
-      <Time>2013-12-12T14:36:37.2391606-06:00</Time>
+      <Output>C:\Users\steel_000\Desktop\WoPR\WoPR\WoPR\WoPR\bin\x86\Debug\Content\SamTroop.xnb</Output>
+      <Time>2013-12-12T14:28:59.5194594-06:00</Time>
     </Item>
     <Item>
       <Source>TborderS.png</Source>
@@ -115,8 +115,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Terran-Tower\Desktop\Proj\WoPR\WoPR\WoPR\bin\x86\Debug\Content\TborderS.xnb</Output>
-      <Time>2013-12-12T14:36:37.246161-06:00</Time>
+      <Output>C:\Users\steel_000\Desktop\WoPR\WoPR\WoPR\WoPR\bin\x86\Debug\Content\TborderS.xnb</Output>
+      <Time>2013-12-12T14:28:59.5214609-06:00</Time>
     </Item>
     <Item>
       <Source>trooper.png</Source>
@@ -124,8 +124,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Terran-Tower\Desktop\Proj\WoPR\WoPR\WoPR\bin\x86\Debug\Content\trooper.xnb</Output>
-      <Time>2013-12-12T14:36:37.282163-06:00</Time>
+      <Output>C:\Users\steel_000\Desktop\WoPR\WoPR\WoPR\WoPR\bin\x86\Debug\Content\trooper.xnb</Output>
+      <Time>2013-12-12T14:28:59.5244646-06:00</Time>
     </Item>
     <Item>
       <Source>Barracks.png</Source>
@@ -133,8 +133,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Terran-Tower\Desktop\Proj\WoPR\WoPR\WoPR\bin\x86\Debug\Content\Barracks.xnb</Output>
-      <Time>2013-12-12T14:36:37.2321602-06:00</Time>
+      <Output>C:\Users\steel_000\Desktop\WoPR\WoPR\WoPR\WoPR\bin\x86\Debug\Content\Barracks.xnb</Output>
+      <Time>2013-12-12T14:28:59.5164545-06:00</Time>
     </Item>
     <Item>
       <Source>HQ.png</Source>
@@ -142,8 +142,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Terran-Tower\Desktop\Proj\WoPR\WoPR\WoPR\bin\x86\Debug\Content\HQ.xnb</Output>
-      <Time>2013-12-12T14:36:37.2341603-06:00</Time>
+      <Output>C:\Users\steel_000\Desktop\WoPR\WoPR\WoPR\WoPR\bin\x86\Debug\Content\HQ.xnb</Output>
+      <Time>2013-12-12T14:28:59.5184575-06:00</Time>
     </Item>
     <Item>
       <Source>Supply.png</Source>
@@ -151,8 +151,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Terran-Tower\Desktop\Proj\WoPR\WoPR\WoPR\bin\x86\Debug\Content\Supply.xnb</Output>
-      <Time>2013-12-12T14:36:37.2441609-06:00</Time>
+      <Output>C:\Users\steel_000\Desktop\WoPR\WoPR\WoPR\WoPR\bin\x86\Debug\Content\Supply.xnb</Output>
+      <Time>2013-12-12T14:28:59.5204607-06:00</Time>
     </Item>
     <Item>
       <Source>overlay.png</Source>
@@ -160,8 +160,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Terran-Tower\Desktop\Proj\WoPR\WoPR\WoPR\bin\x86\Debug\Content\overlay.xnb</Output>
-      <Time>2013-12-12T21:38:17.6742627-06:00</Time>
+      <Output>C:\Users\steel_000\Desktop\WoPR\WoPR\WoPR\WoPR\bin\x86\Debug\Content\overlay.xnb</Output>
+      <Time>2013-12-12T22:03:42.9009873-06:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
@@ -169,39 +169,39 @@
       <TargetProfile>HiDef</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\Users\Terran-Tower\Desktop\Proj\WoPR\WoPR\WoPRContent\</RootDirectory>
-      <LoggerRootDirectory>C:\Users\Terran-Tower\Desktop\Proj\WoPR\WoPR\WoPR\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\Terran-Tower\Desktop\Proj\WoPR\WoPR\WoPRContent\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\Terran-Tower\Desktop\Proj\WoPR\WoPR\WoPR\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\steel_000\Desktop\WoPR\WoPR\WoPR\WoPRContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\steel_000\Desktop\WoPR\WoPR\WoPR\WoPR\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\steel_000\Desktop\WoPR\WoPR\WoPR\WoPRContent\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\steel_000\Desktop\WoPR\WoPR\WoPR\WoPR\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
-        <Value>2010-08-23T12:41:18-05:00</Value>
+        <Value>2010-08-23T13:41:18-05:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.VideoImporters.dll</Key>
-        <Value>2010-08-23T12:41:18-05:00</Value>
+        <Value>2010-08-23T13:41:18-05:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.TextureImporter.dll</Key>
-        <Value>2010-08-23T12:41:18-05:00</Value>
+        <Value>2010-08-23T13:41:18-05:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.FBXImporter.dll</Key>
-        <Value>2010-08-23T12:41:18-05:00</Value>
+        <Value>2010-08-23T13:41:18-05:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.EffectImporter.dll</Key>
-        <Value>2010-08-23T12:41:18-05:00</Value>
+        <Value>2010-08-23T13:41:18-05:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.AudioImporters.dll</Key>
-        <Value>2010-08-23T12:41:18-05:00</Value>
+        <Value>2010-08-23T13:41:18-05:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
-        <Value>2013-09-04T09:57:24.5586997-05:00</Value>
+        <Value>2013-12-11T14:57:03.5628727-06:00</Value>
       </Assembly>
     </Assemblies>
   </Asset>
