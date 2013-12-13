@@ -112,17 +112,68 @@ namespace WoPR
             /*CHANGED CHANGED CHANGED CHANGED*/
         }
 
-        public List<Tile> getLegalMoves(Unit u, Tile t)
+        public List<Tile> getLegalMoves(Tile t)
         {
             List<Tile> temp = new List<Tile>();
-
+            Unit u = t.getUnit();
+            int i = 0;
+            if (u != null)
+            {
+                i = u.getMoveSpeed();
+            }
+            
+            Unit.moveType m = u.getMoveType();
+            temp = getLegalMoves(temp, m, t, i);
             return temp;
         }
-        private List<Tile> getAdjacent(Tile t)
-        {
-            List<Tile> temp = new List<Tile>();
 
-            return temp;
+        public List<Tile> getLegalMoves(List<Tile> list, Unit.moveType m, Tile t, int movePoints)
+        {
+            List<HexCoord> adjacent = t.getPosition().neighbors();
+            Tile temp;
+            int[] moveCosts;
+
+            foreach (HexCoord h in adjacent)
+            {
+                tiles.TryGetValue(h, out temp);
+                moveCosts = temp.getMoveCosts();
+                switch(m)
+                {
+                    case Unit.moveType.foot:
+                        if (moveCosts[0] != -1 && (movePoints - moveCosts[0]) >= 0)
+                        {
+                            if (!list.Contains(temp))
+                            {
+                                list.Add(temp);
+                            }
+                            getLegalMoves(list, m, temp, movePoints - moveCosts[0]);
+                        }
+                        break;
+                    case Unit.moveType.tread:
+                        if (moveCosts[1] != -1 && (movePoints - moveCosts[1]) >= 0)
+                        {
+                            if (!list.Contains(temp))
+                            {
+                                list.Add(temp);
+                            }
+                            getLegalMoves(list, m, temp, movePoints - moveCosts[1]);
+                        }
+                        break;
+                    case Unit.moveType.air:
+                        if (moveCosts[2] != -1 && (movePoints - moveCosts[2]) >= 0)
+                        {
+                            if (!list.Contains(temp))
+                            {
+                                list.Add(temp);
+                            }
+                            getLegalMoves(list, m, temp, movePoints - moveCosts[2]);
+                        }
+                        break;
+                        
+                }
+                
+            }
+            return list;
         }
     }
 }

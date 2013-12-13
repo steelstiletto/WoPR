@@ -64,3 +64,11 @@ C:\Users\steel_000\Desktop\WoPR\WoPR\WoPR\WoPR\bin\x86\Debug\Content\trooper.xnb
 C:\Users\steel_000\Desktop\WoPR\WoPR\WoPR\WoPR\bin\x86\Debug\Content\Barracks.xnb
 C:\Users\steel_000\Desktop\WoPR\WoPR\WoPR\WoPR\bin\x86\Debug\Content\HQ.xnb
 C:\Users\steel_000\Desktop\WoPR\WoPR\WoPR\WoPR\bin\x86\Debug\Content\Supply.xnb
+C:\Users\Terran-Tower\Desktop\Proj\WoPR\WoPR\WoPR\bin\x86\Debug\Content\Demoman.xnb
+C:\Users\Terran-Tower\Desktop\Proj\WoPR\WoPR\WoPR\bin\x86\Debug\Content\SamTroop.xnb
+C:\Users\Terran-Tower\Desktop\Proj\WoPR\WoPR\WoPR\bin\x86\Debug\Content\TborderS.xnb
+C:\Users\Terran-Tower\Desktop\Proj\WoPR\WoPR\WoPR\bin\x86\Debug\Content\trooper.xnb
+C:\Users\Terran-Tower\Desktop\Proj\WoPR\WoPR\WoPR\bin\x86\Debug\Content\Barracks.xnb
+C:\Users\Terran-Tower\Desktop\Proj\WoPR\WoPR\WoPR\bin\x86\Debug\Content\HQ.xnb
+C:\Users\Terran-Tower\Desktop\Proj\WoPR\WoPR\WoPR\bin\x86\Debug\Content\Supply.xnb
+C:\Users\Terran-Tower\Desktop\Proj\WoPR\WoPR\WoPR\bin\x86\Debug\Content\overlay.xnb

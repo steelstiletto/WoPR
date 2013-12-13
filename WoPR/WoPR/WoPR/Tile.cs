@@ -11,6 +11,7 @@ namespace WoPR
     public class Tile : Microsoft.Xna.Framework.DrawableGameComponent
     {
         public enum TileType {plain, water, road, forest, headquarters, barracks, garage, supplyDepot};
+        public enum Highlight {none, blue, orange};
         private const int MAXCHP = 10;
 
         public Player owner;
@@ -27,6 +28,7 @@ namespace WoPR
         private HexCoord position;   //x,y,z
         private Building build;
         private TileType t;
+        public Highlight highlight;
 
         public string type
         {
@@ -51,6 +53,7 @@ namespace WoPR
             this.owner = owner;
             unit = null;
             t = Type;
+            highlight = Highlight.none;
 
             switch (Type)
             {
@@ -162,6 +165,7 @@ namespace WoPR
             drawTile(batch);
             drawUnitBorder(batch);
             drawUnit(batch);
+            drawOverlay(batch);
         }
                 private void drawBorder(SpriteBatch batch)
                 {
@@ -232,7 +236,7 @@ namespace WoPR
 
                     if(unit != null)
                     {
-                        if (false)//check if unit belongs to player 1
+                        if (unit.getOwner().isPlayer1)//check if unit belongs to player 1
                         {
                             batch.Draw(Game.uBorder1, temp, Color.White);
                         }
@@ -250,7 +254,7 @@ namespace WoPR
                     {
                         Unit.unitType t = unit.t;
 
-                        if (false)//check if unit belongs to player 1
+                        if (unit.getOwner().isPlayer1)//check if unit belongs to player 1
                         {
                             switch (t)
                             {
@@ -286,6 +290,24 @@ namespace WoPR
                         }
                     }
                 }
+
+        private void drawOverlay(SpriteBatch batch)
+        {
+            Vector2 temp = convertToXY();
+            temp.X += 13;
+            temp.Y += 9;
+
+            /*switch (highlight)
+            {
+                case Highlight.blue:
+                    batch.Draw(Game.overlay, temp, Color.Blue);
+                    break;
+
+                case Highlight.orange:
+                    batch.Draw(Game.overlay, temp, Color.Orange);
+                    break;
+            }*/
+        }
         
         private Vector2 convertToXY()
         {
@@ -334,6 +356,10 @@ namespace WoPR
         private TileType getType()
         {
             return t;
+        }
+        public HexCoord getPosition()
+        {
+            return position;
         }
     }
 }
