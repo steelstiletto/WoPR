@@ -21,6 +21,7 @@ namespace WoPR
         public Map currentMap;
         public List<Tile> subSelection;
         public Tile activeTile;
+        public Attack cAttack;
         
 
         //Textures
@@ -68,6 +69,7 @@ namespace WoPR
             graphics.PreferredBackBufferWidth = 1121;
             subSelection = null;
             activeTile = null;
+            cAttack = null;
 
             TESTprintTimer = 0;
         }
@@ -247,7 +249,16 @@ namespace WoPR
                 }
                 if (selectedTile.highlight == Tile.Highlight.orange)
                 {
-
+                    if (selectedTile.unit != null && selectedTile.unit.getOwner() != activeTile.unit.getOwner())
+                    {
+                        selectedTile.unit.damage(cAttack, selectedTile); activeTile = null;
+                        foreach (Tile t in subSelection)
+                        {
+                            t.highlight = Tile.Highlight.none;
+                        }
+                        subSelection = null;
+                        selectedTile.unit.moved = true;
+                    }
                 }
             }
         }
@@ -402,6 +413,7 @@ namespace WoPR
                 }
                 subSelection = tiles;
                 activeTile = cTile;
+                cAttack = cTile.unit.getPrimaryAttack(); 
             }
             if (itemSelected == "Flamethrower" || itemSelected == "Bazooka" || itemSelected == "Rifle")
             {
@@ -413,6 +425,7 @@ namespace WoPR
                 }
                 subSelection = tiles;
                 activeTile = cTile;
+                cAttack = cTile.unit.getSecondaryAttack();
             }
             if (itemSelected == "Capture")
             {
