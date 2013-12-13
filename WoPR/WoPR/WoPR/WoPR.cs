@@ -15,6 +15,9 @@ namespace WoPR
         SpriteBatch spriteBatch;
         public UI ui;
         public List<Player> players;
+        public int currentPlayerIndex;
+        public Player currentPlayer { get { return players[currentPlayerIndex]; } }
+        public SimpleController currentPlayerController { get { return players[currentPlayerIndex].controller; } }
         public Map currentMap;
 
         //Textures
@@ -49,6 +52,7 @@ namespace WoPR
             players.Add(new Player(false, new SimpleController(this, PlayerIndex.Two)));
             Components.Add(players[0].controller);
             Components.Add(players[1].controller);
+            currentPlayerIndex = 0;
             currentMap = new Map(this);
             testStuff();
             initializeMenus();
@@ -230,6 +234,12 @@ namespace WoPR
 
         private void TESTprintFunction()
         {
+        }
+
+        public void incrementPlayer()
+        {
+            currentPlayerIndex++;
+            currentPlayerIndex %= players.Count;
         }
     }
 }

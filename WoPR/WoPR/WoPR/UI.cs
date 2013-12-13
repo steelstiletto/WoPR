@@ -62,12 +62,12 @@ namespace WoPR
             base.Update(gameTime);
 
             // If there are no events, there is no need to proceed
-            if (Game.players[0].controller.buttonEvents.Count == 0) return;
+            if (Game.currentPlayerController.buttonEvents.Count == 0) return;
 
             // If no menu is active, assume that we should be accepting Map input
             if (activeMenu == null) currentType = InputType.map;
 
-            button pressedButton = Game.players[0].controller.buttonEvents.Dequeue();
+            button pressedButton = Game.currentPlayerController.buttonEvents.Dequeue();
 
             if (currentType == InputType.menu && activeMenu != null)
                 menuInput(pressedButton);
