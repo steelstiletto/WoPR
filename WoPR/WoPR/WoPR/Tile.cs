@@ -33,10 +33,22 @@ namespace WoPR
             get { return t.ToString(); }
         }
 
-        public Tile(Game game, TileType Type, HexCoord xyz) : base(game)
+        public Tile(Game game, TileType Type, HexCoord xyz)
+            : base(game)
+        {
+            initialize(game, Type, xyz, null);
+        }
+        public Tile(Game game, TileType Type, HexCoord xyz, Player owner)
+            : base(game)
+        {
+            initialize(game, Type, xyz, owner);
+        }
+
+        private void initialize(Game game, TileType Type, HexCoord xyz, Player owner)
         {
             Game = (WoPR)game;
             position = xyz;
+            this.owner = owner;
             unit = null;
             t = Type;
 
@@ -48,8 +60,7 @@ namespace WoPR
                     hpHealed = 0;
                     capturehp = 10;
                     dBonus = .1;
-                    capturable = false; 
-                    owner = null;
+                    capturable = false;
                     build = null;
                     break;
 
@@ -60,7 +71,6 @@ namespace WoPR
                     capturehp = 10;
                     dBonus = 0;
                     capturable = false;
-                    owner = null;
                     build = null;
                     break;
 
@@ -71,7 +81,6 @@ namespace WoPR
                     capturehp = 10;
                     dBonus = 0;
                     capturable = false;
-                    owner = null;
                     build = null;
                     break;
 
@@ -82,7 +91,6 @@ namespace WoPR
                     capturehp = 10;
                     dBonus = .3;
                     capturable = false;
-                    owner = null;
                     build = null;
                     break;
 
@@ -93,7 +101,6 @@ namespace WoPR
                     capturehp = 10;
                     dBonus = .4;
                     capturable = true;
-                    owner = null;
                     build = new Building(Building.buildType.headquarters);
                     break;
 
@@ -104,7 +111,6 @@ namespace WoPR
                     capturehp = 10;
                     dBonus = .4;
                     capturable = true;
-                    owner = null;
                     build = new Building(Building.buildType.barracks);
                     break;
 
@@ -115,7 +121,6 @@ namespace WoPR
                     capturehp = 10;
                     dBonus = 0.4;
                     capturable = true;
-                    owner = null;
                     build = new Building(Building.buildType.garage);
                     break;
 
@@ -126,7 +131,6 @@ namespace WoPR
                     capturehp = 10;
                     dBonus = 0.6;
                     capturable = true;
-                    owner = null;
                     build = new Building(Building.buildType.supplyDepot);
                     break;
             }
