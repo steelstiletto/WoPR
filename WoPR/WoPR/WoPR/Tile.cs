@@ -143,8 +143,9 @@ namespace WoPR
             if (capturehp <= 0)
             {
                 owner = u.getOwner();
+                return true;
             }
-            return true;
+            return false;
         }
 
         public void resetCaptureHP()
@@ -400,6 +401,8 @@ namespace WoPR
 
         public bool buildable()
         {
+            if (this.getType() == TileType.water)
+                return false;
             // If the active player is not in control, or the tile is occupied, return
             if (owner != Game.currentPlayer || unit != null) return false;
 

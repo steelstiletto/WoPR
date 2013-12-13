@@ -234,6 +234,7 @@ namespace WoPR
                         {
                             if (current.getUnit().attackable(a))
                             {
+                                if(t.unit.getOwner() != current.unit.getOwner())
                                 temp.Add(current);
                             }
                         }

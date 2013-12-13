@@ -302,7 +302,7 @@ namespace WoPR
             Random rand = new Random();
 
             //formula:   (damage roll) X (Armor) X (Effective damage modifier) X (Terrain bonus)
-            dealt = (int)(((double)rand.Next(a.getMinDamage(), a.getMaxDamage())) * armor * (1 - t.getDBonus())); //roll damage and multiply against armor
+            dealt = (int)(((double)rand.Next(a.getMinDamage(), a.getMaxDamage())) * (1 - armor) * (1 - t.getDBonus())); //roll damage and multiply against armor
             if (superEffective(a)) //double damage for attack effective against armor
             {
                 dealt *= 2;
@@ -314,6 +314,11 @@ namespace WoPR
 
             //adjust hp and return
             hp -= dealt;
+            if (hp <= 0)
+            {
+                owner.unitList.Remove(this);
+                t.unit = null;
+            }
             return dealt;
         }
 

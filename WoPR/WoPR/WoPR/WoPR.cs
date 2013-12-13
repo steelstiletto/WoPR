@@ -22,6 +22,7 @@ namespace WoPR
         public List<Tile> subSelection;
         public Tile activeTile;
         public Attack cAttack;
+        public Unit cUnit;
         
 
         //Textures
@@ -70,6 +71,7 @@ namespace WoPR
             subSelection = null;
             activeTile = null;
             cAttack = null;
+            cUnit = null;
 
             TESTprintTimer = 0;
         }
@@ -257,7 +259,9 @@ namespace WoPR
                             t.highlight = Tile.Highlight.none;
                         }
                         subSelection = null;
-                        selectedTile.unit.moved = true;
+                        cUnit.moved = true;
+                        cUnit.acted = true;
+                        cUnit = null;
                     }
                 }
             }
@@ -410,26 +414,34 @@ namespace WoPR
             if (itemSelected == "Rifle" || itemSelected == "Mortar" || itemSelected == "SAM Launcher")
             {
                 currentMap.tiles.TryGetValue(ui.currentSelection, out cTile);
-                tiles = currentMap.getLegalAttacks(cTile, true);
-                foreach (Tile t in tiles)
+                if (!cTile.unit.acted == true)
                 {
-                    t.highlight = Tile.Highlight.orange;
+                    tiles = currentMap.getLegalAttacks(cTile, true);
+                    foreach (Tile t in tiles)
+                    {
+                        t.highlight = Tile.Highlight.orange;
+                    }
+                    subSelection = tiles;
+                    activeTile = cTile;
+                    cAttack = cTile.unit.getPrimaryAttack();
+                    cUnit = cTile.unit;
                 }
-                subSelection = tiles;
-                activeTile = cTile;
-                cAttack = cTile.unit.getPrimaryAttack(); 
             }
             if (itemSelected == "Flamethrower" || itemSelected == "Bazooka" || itemSelected == "Rifle")
             {
                 currentMap.tiles.TryGetValue(ui.currentSelection, out cTile);
-                tiles = currentMap.getLegalAttacks(cTile, false);
-                foreach (Tile t in tiles)
+                if (!cTile.unit.acted == true)
                 {
-                    t.highlight = Tile.Highlight.orange;
+                    tiles = currentMap.getLegalAttacks(cTile, true);
+                    foreach (Tile t in tiles)
+                    {
+                        t.highlight = Tile.Highlight.orange;
+                    }
+                    subSelection = tiles;
+                    activeTile = cTile;
+                    cAttack = cTile.unit.getSecondaryAttack();
+                    cUnit = cTile.unit;
                 }
-                subSelection = tiles;
-                activeTile = cTile;
-                cAttack = cTile.unit.getSecondaryAttack();
             }
             if (itemSelected == "Capture")
             {
