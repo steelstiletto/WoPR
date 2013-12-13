@@ -316,7 +316,11 @@ namespace WoPR
         private void mainMenuSelection(string itemSelected)
         {
             if (itemSelected == "Exit") this.Exit();
-            if (itemSelected == "New Game") ui.displayMap = true;
+            if (itemSelected == "New Game")
+            {
+                ui.displayMap = true;
+                startTurn();
+            }
         }
 
         private void barracksMenuSelection(string itemSelected)
@@ -459,7 +463,18 @@ namespace WoPR
                 u.moved = false;
             }
             incrementPlayer();
-            currentPlayer.grantIncome(300);
+            startTurn();
+        }
+
+        public void startTurn()
+        {
+            int resourcesToAdd = 0;
+            foreach(KeyValuePair<HexCoord, Tile> pair in currentMap.tiles)
+            {
+                if (pair.Value.getBuilding() != null && pair.Value.owner == currentPlayer)
+                    resourcesToAdd += 100;
+            }
+            currentPlayer.grantIncome(resourcesToAdd);
         }
     }
 }
