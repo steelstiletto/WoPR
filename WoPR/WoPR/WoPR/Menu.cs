@@ -143,8 +143,8 @@ namespace WoPR
             {
                 // Select the color to use
                 Color color;
-                if(selected == i) color = Color.CadetBlue;
-                else color = Color.Chocolate;
+                if(selected == i) color = Color.Black;
+                else color = Color.Yellow;
 
                 // Set the scale to render the full title in alloted space
                 fullSize = font.MeasureString(menuItems[i]);

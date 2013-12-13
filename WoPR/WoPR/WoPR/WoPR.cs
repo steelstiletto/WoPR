@@ -38,6 +38,7 @@ namespace WoPR
         public Texture2D trooper = null;
         public Texture2D demo = null;
         public Texture2D samT = null;
+        public Texture2D hudBackplate = null;
 
         private double TESTprintTimer;
 
@@ -116,6 +117,9 @@ namespace WoPR
             trooper = Content.Load<Texture2D>("trooper");
             demo = Content.Load<Texture2D>("Demoman");
             samT = Content.Load<Texture2D>("SamTroop");
+
+            //Hud backplate
+            hudBackplate = Content.Load<Texture2D>("HudBackplate");
 
         }
 

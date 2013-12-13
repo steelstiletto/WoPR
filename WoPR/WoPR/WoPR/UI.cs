@@ -18,6 +18,7 @@ namespace WoPR
         public HexCoord currentSelection;
         public InputType currentType;
         new public WoPR Game;
+        private HUD hud;
 
         public UI(Game game)
             : base(game)
@@ -32,6 +33,7 @@ namespace WoPR
             menus = new Dictionary<string, Menu>();
             currentSelection = HexCoord.Zero;
             currentType = InputType.menu;
+            hud = new HUD(Game);
         }
 
         protected override void LoadContent()
@@ -94,7 +96,8 @@ namespace WoPR
                 }
                 else if (pressedButton == button.B)
                 {
-                    // If it's a B button, implement this later.
+                    // If it's a B button, cancel out of the menu and return to map mode, but only if we are not at the main menu
+                    if (activeMenu != "mainMenu") activeMenu = null;
                 }
                 // Else it must be a direction, pass it to the active menu
                 else
@@ -155,7 +158,11 @@ namespace WoPR
         {
             base.Draw(gameTime);
             batch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend);
-            if (displayMap) Game.currentMap.draw(batch);
+            if (displayMap)
+            {
+                Game.currentMap.draw(batch);
+                hud.draw(batch, font);
+            }
             if(activeMenu != null) menus[activeMenu].draw(batch, font);
             batch.End();
         }

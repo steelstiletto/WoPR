@@ -163,6 +163,15 @@
       <Output>C:\Users\steel_000\Desktop\WoPR\WoPR\WoPR\WoPR\bin\x86\Debug\Content\overlay.xnb</Output>
       <Time>2013-12-12T22:03:42.9009873-06:00</Time>
     </Item>
+    <Item>
+      <Source>HudBackplate.png</Source>
+      <Name>HudBackplate</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\steel_000\Desktop\WoPR\WoPR\WoPR\WoPR\bin\x86\Debug\Content\HudBackplate.xnb</Output>
+      <Time>2013-12-13T13:51:44.2375228-06:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>

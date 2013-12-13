@@ -73,3 +73,4 @@ C:\Users\Terran-Tower\Desktop\Proj\WoPR\WoPR\WoPR\bin\x86\Debug\Content\HQ.xnb
 C:\Users\Terran-Tower\Desktop\Proj\WoPR\WoPR\WoPR\bin\x86\Debug\Content\Supply.xnb
 C:\Users\Terran-Tower\Desktop\Proj\WoPR\WoPR\WoPR\bin\x86\Debug\Content\overlay.xnb
 C:\Users\steel_000\Desktop\WoPR\WoPR\WoPR\WoPR\bin\x86\Debug\Content\overlay.xnb
+C:\Users\steel_000\Desktop\WoPR\WoPR\WoPR\WoPR\bin\x86\Debug\Content\HudBackplate.xnb

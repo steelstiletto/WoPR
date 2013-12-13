@@ -8,7 +8,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace WoPR
 {
-    public class Tile : Microsoft.Xna.Framework.DrawableGameComponent
+    public class Tile
     {
         public enum TileType {plain, water, road, forest, headquarters, barracks, garage, supplyDepot};
         public enum Highlight {none, blue, orange};
@@ -31,12 +31,10 @@ namespace WoPR
         public Highlight highlight;
 
         public Tile(Game game, TileType Type, HexCoord xyz)
-            : base(game)
         {
             initialize(game, Type, xyz, null);
         }
         public Tile(Game game, TileType Type, HexCoord xyz, Player owner)
-            : base(game)
         {
             initialize(game, Type, xyz, owner);
         }

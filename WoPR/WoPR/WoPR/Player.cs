@@ -8,7 +8,7 @@ namespace WoPR
     public class Player
     {
         public List<Unit> unitList;
-        private int resources;
+        public int resources { get; private set; }
         public bool isPlayer1 { get; private set; }
         public SimpleController controller;
 
