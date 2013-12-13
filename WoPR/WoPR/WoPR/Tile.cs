@@ -297,16 +297,16 @@ namespace WoPR
             temp.X += 13;
             temp.Y += 9;
 
-            /*switch (highlight)
+            switch (highlight)
             {
                 case Highlight.blue:
-                    batch.Draw(Game.overlay, temp, Color.Blue);
+                    batch.Draw(Game.overlay, temp, Color.CornflowerBlue * 0.7f);
                     break;
 
                 case Highlight.orange:
-                    batch.Draw(Game.overlay, temp, Color.Orange);
+                    batch.Draw(Game.overlay, temp, Color.Orange * 0.5f);
                     break;
-            }*/
+            }
         }
         
         private Vector2 convertToXY()

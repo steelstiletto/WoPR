@@ -32,6 +32,7 @@ namespace WoPR
         public Texture2D barracks = null;
         public Texture2D hq = null;
         public Texture2D supply = null;
+        public Texture2D overlay = null;
         public Texture2D uBorder1 = null;
         public Texture2D uBorder2 = null;
         public Texture2D trooper = null;
@@ -105,6 +106,7 @@ namespace WoPR
             barracks = Content.Load<Texture2D>("Barracks");
             hq = Content.Load<Texture2D>("HQ");
             supply = Content.Load<Texture2D>("Supply");
+            overlay = Content.Load<Texture2D>("overlay");
 
             //Unit Borders
             uBorder1 = Content.Load<Texture2D>("borders_p1");
