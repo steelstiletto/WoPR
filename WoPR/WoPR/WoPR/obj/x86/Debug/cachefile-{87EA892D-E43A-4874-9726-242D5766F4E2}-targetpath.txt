@@ -17,4 +17,6 @@ Content\HQ.xnb
 Content\Supply.xnb
 Content\overlay.xnb
 Content\HudBackplate.xnb
+Content\unitOverlay.xnb
+Content\HPBackplate.xnb
 Content\MapData.xml

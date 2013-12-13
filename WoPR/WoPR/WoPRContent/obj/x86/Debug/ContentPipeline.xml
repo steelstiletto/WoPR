@@ -172,6 +172,24 @@
       <Output>C:\Users\steel_000\Desktop\WoPR\WoPR\WoPR\WoPR\bin\x86\Debug\Content\HudBackplate.xnb</Output>
       <Time>2013-12-13T13:51:44.2375228-06:00</Time>
     </Item>
+    <Item>
+      <Source>unitOverlay.png</Source>
+      <Name>unitOverlay</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\steel_000\Desktop\WoPR\WoPR\WoPR\WoPR\bin\x86\Debug\Content\unitOverlay.xnb</Output>
+      <Time>2013-12-13T14:41:08.8867236-06:00</Time>
+    </Item>
+    <Item>
+      <Source>HPBackplate.png</Source>
+      <Name>HPBackplate</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\steel_000\Desktop\WoPR\WoPR\WoPR\WoPR\bin\x86\Debug\Content\HPBackplate.xnb</Output>
+      <Time>2013-12-13T14:53:33.2874595-06:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>

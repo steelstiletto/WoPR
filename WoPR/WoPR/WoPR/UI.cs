@@ -13,7 +13,7 @@ namespace WoPR
         private Dictionary<string, Menu> menus;
         public string activeMenu;
         private SpriteBatch batch;
-        private SpriteFont font;
+        public SpriteFont font;
         public bool displayMap;
         public HexCoord currentSelection;
         public InputType currentType;

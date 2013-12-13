@@ -43,6 +43,7 @@ namespace WoPR
         public Texture2D samT = null;
         public Texture2D uOverlay = null;
         public Texture2D hudBackplate = null;
+        public Texture2D hpBackplate = null;
 
         private double TESTprintTimer;
 
@@ -125,8 +126,9 @@ namespace WoPR
             demo = Content.Load<Texture2D>("Demoman");
             samT = Content.Load<Texture2D>("SamTroop");
 
-            //Hud backplate
+            //Hud and hp backplates
             hudBackplate = Content.Load<Texture2D>("HudBackplate");
+            hpBackplate = Content.Load<Texture2D>("HPBackplate");
 
         }
 

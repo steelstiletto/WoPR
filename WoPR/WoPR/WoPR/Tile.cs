@@ -16,7 +16,7 @@ namespace WoPR
 
         public Player owner;
         public Unit unit;
-        new public WoPR Game;
+        public WoPR Game;
 
         private int[] moveCosts;//foot, tread, air
         private int capturehp;
@@ -160,6 +160,7 @@ namespace WoPR
             drawUnit(batch);
             drawUnitOverlay(batch);
             drawOverlay(batch);
+            drawHealthOverlay(batch);
         }
                 private void drawBorder(SpriteBatch batch)
                 {
@@ -319,6 +320,28 @@ namespace WoPR
                 case Highlight.orange:
                     batch.Draw(Game.overlay, temp, Color.Orange * 0.5f);
                     break;
+            }
+        }
+
+        private void drawHealthOverlay(SpriteBatch batch)
+        {
+            if (unit != null && unit.getHp() != 100)
+            {
+                Vector2 temp = convertToXY();
+                temp.X += 15;
+                temp.Y += 55;
+                batch.Draw(Game.hpBackplate, temp, Color.White);
+                temp.X += 8;
+                batch.DrawString(Game.ui.font, ((unit.getHp() + 9) / 10).ToString(), temp, Color.Black);
+            }
+            if (capturable && capturehp != 10)
+            {
+                Vector2 temp = convertToXY();
+                temp.X += 115;
+                temp.Y += 55;
+                batch.Draw(Game.hpBackplate, temp, Color.White);
+                temp.X += 8;
+                batch.DrawString(Game.ui.font, capturehp.ToString(), temp, Color.Black);
             }
         }
         
