@@ -8,7 +8,7 @@
     <coord x="3" y="-1" z="-2" />
   </terrain>    
    <terrain type ="headquarters">
-    <coord x="4" y="-2" z="-2" />
+    <coord x="4" y="-2" z="-2" owner="1" />
   </terrain>
   <terrain type="plain"> 
     <coord x="5" y="-2" z="-3" />

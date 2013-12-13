@@ -8,7 +8,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace WoPR
 {
-    class Tile : Microsoft.Xna.Framework.DrawableGameComponent
+    public class Tile : Microsoft.Xna.Framework.DrawableGameComponent
     {
         public enum TileType {plain, water, road, forest, headquarters, barracks, garage, supplyDepot};
         private const int MAXCHP = 10;

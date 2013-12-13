@@ -12,13 +12,13 @@ namespace WoPR
     {
         private Dictionary<HexCoord, Tile> tiles;
         
-        /* CHANGED*/private Game WoPR;/* CHANGED*/
+        /* CHANGED*/private WoPR WoPR;/* CHANGED*/
 
         public Map(Game game)
         {
             tiles = new Dictionary<HexCoord, Tile>();
 
-            /* CHANGED*/WoPR = game; //CHANGED
+            /* CHANGED*/WoPR = (WoPR)game; //CHANGED
 
             //writeBasicMap();
             parseMapXML("Content/MapData.xml");
@@ -84,10 +84,14 @@ namespace WoPR
                     int Y = Convert.ToInt32(reader.Value);
                     reader.MoveToNextAttribute();
                     int Z = Convert.ToInt32(reader.Value);
+                    string ownerString = reader.GetAttribute("owner");
+                    Player owner = null;
+                    if (ownerString == "1") owner = WoPR.players[0];
+                    if (ownerString == "2") owner = WoPR.players[1];
                     Debug.Print(X + " " + Y + " " + Z);
                     HexCoord position = new HexCoord(X, Y, Z);
 
-                    /* CHANGED*/currentTile = new Tile(WoPR, terrainEnum, position);/* CHANGED*/
+                    /* CHANGED*/currentTile = new Tile(WoPR, terrainEnum, position, owner);/* CHANGED*/
 
                     tiles.Add(position, currentTile);
                 } while (reader.ReadToNextSibling("coord"));

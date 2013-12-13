@@ -5,7 +5,7 @@ using System.Text;
 
 namespace WoPR
 {
-    class Building
+    public class Building
     {
         public enum buildType {headquarters, barracks, garage, supplyDepot};
 

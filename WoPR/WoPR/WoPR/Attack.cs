@@ -5,7 +5,7 @@ using System.Text;
 
 namespace WoPR
 {
-    class Attack
+    public class Attack
     {
         public enum Type {bullet, shell, aa, flame, blade};
         public enum Name {rifle, flameThrower, mortar, bazooka, samLauncher, hmg, hitNRun, flameLauncher, lightCannon, heavyCannon, lmg, flakCannon, bombardment, RocketPods, Minigun, fireball, claws, skyDive, demonBlade, darkPulse, siegeCannon, exhaustVent};

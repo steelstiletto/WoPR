@@ -1,4 +1,5 @@
 using System.Diagnostics;
+using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
@@ -13,7 +14,7 @@ namespace WoPR
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         public UI ui;
-        public SimpleController player1;
+        public List<Player> players;
         public Map currentMap;
 
         //Textures
@@ -41,11 +42,14 @@ namespace WoPR
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
             IsMouseVisible = true;
-            currentMap = new Map(this);
             ui = new UI(this);
             Components.Add(ui);
-            player1 = new SimpleController(this, PlayerIndex.One);
-            Components.Add(player1);
+            players = new List<Player>();
+            players.Add(new Player(true, new SimpleController(this, PlayerIndex.One)));
+            players.Add(new Player(false, new SimpleController(this, PlayerIndex.Two)));
+            Components.Add(players[0].controller);
+            Components.Add(players[1].controller);
+            currentMap = new Map(this);
             testStuff();
             initializeMenus();
             graphics.IsFullScreen = false;
@@ -181,11 +185,6 @@ namespace WoPR
 
         private void TESTprintFunction()
         {
-            foreach (button b in player1.buttonEvents)
-            {
-                Debug.Print(b + " ");
-            }
-            Debug.Print("\n");
         }
     }
 }

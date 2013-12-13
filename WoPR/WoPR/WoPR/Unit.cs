@@ -5,7 +5,7 @@ using System.Text;
 
 namespace WoPR
 {
-    class Unit
+    public class Unit
     {
         public const int MAXHP = 100;
 

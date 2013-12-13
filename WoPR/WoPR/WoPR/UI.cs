@@ -62,11 +62,11 @@ namespace WoPR
             base.Update(gameTime);
 
             // If there are no events, there is no need to proceed
-            if (Game.player1.buttonEvents.Count == 0) return;
+            if (Game.players[0].controller.buttonEvents.Count == 0) return;
 
-            button pressedButton = Game.player1.buttonEvents.Dequeue();
+            button pressedButton = Game.players[0].controller.buttonEvents.Dequeue();
 
-            if (currentType == InputType.menu)
+            if (currentType == InputType.menu && activeMenu != null)
                 menuInput(pressedButton);
             if (currentType == InputType.map)
                 mapInput(pressedButton);
@@ -84,7 +84,9 @@ namespace WoPR
             {
                 if (pressedButton == button.A)
                 {
+                    // If the event is a confirmation, select the active menu and then close the menu
                     Game.MenuSelection(activeMenu, menus[activeMenu].getSelected().Value);
+                    activeMenu = null;
                 }
                 else if (pressedButton == button.B)
                 {
@@ -109,9 +111,8 @@ namespace WoPR
         {
             base.Draw(gameTime);
             batch.Begin(SpriteSortMode.FrontToBack, BlendState.AlphaBlend);
-            Debug.Assert(menus.ContainsKey(activeMenu), "Invalid menu selected as active: " + activeMenu);
             if (displayMap) Game.currentMap.draw(batch);
-            menus[activeMenu].draw(batch, font);
+            if(activeMenu != null) menus[activeMenu].draw(batch, font);
             batch.End();
         }
 

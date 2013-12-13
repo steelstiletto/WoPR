@@ -5,17 +5,28 @@ using System.Text;
 
 namespace WoPR
 {
-    class Player
+    public class Player
     {
         public List<Unit> unitList;
         private int resources;
         public bool isPlayer1 { get; private set; }
+        public SimpleController controller;
 
         public Player(bool p1)
         {
+            init(p1, 0, null);
+        }
+        public Player(bool p1, SimpleController controller)
+        {
+            init(p1, 0, controller);
+        }
+
+        public void init(bool p1, int resources, SimpleController controller)
+        {
             unitList = new List<Unit>();
-            resources = 0;
+            this.resources = resources;
             isPlayer1 = p1;
+            this.controller = controller;
         }
 
         //input: amount spent

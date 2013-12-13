@@ -35,7 +35,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\steel_000\Desktop\WoPR\WoPR\WoPR\WoPR\bin\x86\Debug\Content\forest.xnb</Output>
-      <Time>2013-12-12T00:54:55.9013071-06:00</Time>
+      <Time>2013-12-12T14:28:59.5244646-06:00</Time>
     </Item>
     <Item>
       <Source>plain.png</Source>
@@ -90,6 +90,69 @@
       <Options>None</Options>
       <Output>C:\Users\steel_000\Desktop\WoPR\WoPR\WoPR\WoPR\bin\x86\Debug\Content\water.xnb</Output>
       <Time>2013-12-12T00:54:46.5956181-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Demoman.png</Source>
+      <Name>Demoman</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\steel_000\Desktop\WoPR\WoPR\WoPR\WoPR\bin\x86\Debug\Content\Demoman.xnb</Output>
+      <Time>2013-12-12T14:28:59.5174558-06:00</Time>
+    </Item>
+    <Item>
+      <Source>SamTroop.png</Source>
+      <Name>SamTroop</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\steel_000\Desktop\WoPR\WoPR\WoPR\WoPR\bin\x86\Debug\Content\SamTroop.xnb</Output>
+      <Time>2013-12-12T14:28:59.5194594-06:00</Time>
+    </Item>
+    <Item>
+      <Source>TborderS.png</Source>
+      <Name>TborderS</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\steel_000\Desktop\WoPR\WoPR\WoPR\WoPR\bin\x86\Debug\Content\TborderS.xnb</Output>
+      <Time>2013-12-12T14:28:59.5214609-06:00</Time>
+    </Item>
+    <Item>
+      <Source>trooper.png</Source>
+      <Name>trooper</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\steel_000\Desktop\WoPR\WoPR\WoPR\WoPR\bin\x86\Debug\Content\trooper.xnb</Output>
+      <Time>2013-12-12T14:28:59.5244646-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Barracks.png</Source>
+      <Name>Barracks</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\steel_000\Desktop\WoPR\WoPR\WoPR\WoPR\bin\x86\Debug\Content\Barracks.xnb</Output>
+      <Time>2013-12-12T14:28:59.5164545-06:00</Time>
+    </Item>
+    <Item>
+      <Source>HQ.png</Source>
+      <Name>HQ</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\steel_000\Desktop\WoPR\WoPR\WoPR\WoPR\bin\x86\Debug\Content\HQ.xnb</Output>
+      <Time>2013-12-12T14:28:59.5184575-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Supply.png</Source>
+      <Name>Supply</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\steel_000\Desktop\WoPR\WoPR\WoPR\WoPR\bin\x86\Debug\Content\Supply.xnb</Output>
+      <Time>2013-12-12T14:28:59.5204607-06:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
