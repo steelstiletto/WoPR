@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Audio;
 
 namespace WoPR
 {
@@ -46,6 +47,7 @@ namespace WoPR
         public Texture2D uOverlay = null;
         public Texture2D hudBackplate = null;
         public Texture2D hpBackplate = null;
+        public SoundEffect gameover; 
 
         private double TESTprintTimer;
 
@@ -72,6 +74,7 @@ namespace WoPR
             activeTile = null;
             cAttack = null;
             cUnit = null;
+            gameover = null;
 
             TESTprintTimer = 0;
         }
@@ -133,6 +136,9 @@ namespace WoPR
             //Hud and hp backplates
             hudBackplate = Content.Load<Texture2D>("HudBackplate");
             hpBackplate = Content.Load<Texture2D>("HPBackplate");
+
+            //gameover
+            gameover = Content.Load<SoundEffect>("GameOverYeah");
 
         }
 
@@ -262,8 +268,17 @@ namespace WoPR
                         cUnit.moved = true;
                         cUnit.acted = true;
                         cUnit = null;
+                        foreach (Player P in players)
+                        {
+                            if (P.unitList.Count <= 0)
+                            {
+                                gameOver(selectedTile);
+                            }
+                        }
                     }
+                    
                 }
+                
             }
         }
 
@@ -506,6 +521,16 @@ namespace WoPR
                     resourcesToAdd += 100;
             }
             currentPlayer.grantIncome(resourcesToAdd);
+        }
+
+        public void gameOver(Tile T)
+        {
+            SpriteBatch batch = new SpriteBatch(GraphicsDevice);
+            batch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend);
+            T.Draw(batch);
+            gameover.Play();
+            System.Threading.Thread.Sleep(7000);
+            this.Exit();
         }
     }
 }
