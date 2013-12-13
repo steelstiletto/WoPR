@@ -3,31 +3,31 @@
 <map>
   <terrain type="plain">
     <coord x="0" y="0" z="0" />
-    <coord x="1" y="0" z="-1" />
-    <coord x="2" y="-1" z="-1" />
-    <coord x="3" y="-1" z="-2" />
+    <coord x="1" y="0" z="-1"  owner="1"/>
+    <coord x="2" y="-1" z="-1"  owner="1"/>
+    <coord x="3" y="-1" z="-2"  owner="1"/>
   </terrain>    
    <terrain type ="headquarters">
     <coord x="4" y="-2" z="-2" owner="1" />
   </terrain>
   <terrain type="plain"> 
-    <coord x="5" y="-2" z="-3" />
+    <coord x="5" y="-2" z="-3"  owner="1"/>
     <coord x="6" y="-3" z="-3" />
     <coord x="7" y="-3" z="-4" />
     <coord x="8" y="-4" z="-4" />
     
 
     <coord x="0" y="1" z="-1" />
-    <coord x="1" y="1" z="-2" />
+    <coord x="1" y="1" z="-2"  owner="1"/>
   </terrain>
   <terrain type ="barracks">
-    <coord x="2" y="0" z="-2" />
+    <coord x="2" y="0" z="-2"  owner="1"/>
   </terrain>
   <terrain type="plain">
-    <coord x="3" y="0" z="-3" />
+    <coord x="3" y="0" z="-3"  owner="1"/>
   </terrain>
   <terrain type ="road">
-    <coord x="4" y="-1" z="-3" />
+    <coord x="4" y="-1" z="-3"  owner="1"/>
   </terrain>
   <terrain type="plain">
     <coord x="5" y="-1" z="-4" />
@@ -44,7 +44,7 @@
   </terrain>
   <terrain type ="water">
     <coord x="1" y="2" z="-3" />
-    <coord x="2" y="1" z="-3" />
+    <coord x="2" y="1" z="-3"  owner="1"/>
   </terrain>
   <terrain type="forest">
     <coord x="3" y="1" z="-4" />
@@ -78,13 +78,13 @@
     <coord x="4" y="1" z="-5" />
   </terrain>
   <terrain type="plain">
-    <coord x="5" y="1" z="-6" />
+    <coord x="5" y="1" z="-6"  owner="2"/>
   </terrain>
   <terrain type ="water">
-    <coord x="6" y="0" z="-6" />
+    <coord x="6" y="0" z="-6" owner="2"/>
   </terrain>
   <terrain type="plain">
-    <coord x="7" y="0" z="-7" />
+    <coord x="7" y="0" z="-7"  owner="2"/>
     <coord x="8" y="-1" z="-7" />
     
 
@@ -95,19 +95,19 @@
     <coord x="2" y="3" z="-5" />
   </terrain>
   <terrain type="plain">
-    <coord x="3" y="3" z="-6" />
+    <coord x="3" y="3" z="-6" owner="2" />
   </terrain>
   <terrain type ="road">
-    <coord x="4" y="2" z="-6" />
+    <coord x="4" y="2" z="-6" owner="2"/>
   </terrain>
   <terrain type="plain">
-    <coord x="5" y="2" z="-7" />
+    <coord x="5" y="2" z="-7" owner="2" />
   </terrain>
   <terrain type ="barracks">
-    <coord x="6" y="1" z="-7" />
+    <coord x="6" y="1" z="-7"  owner="2"/>
   </terrain>
   <terrain type="plain">
-    <coord x="7" y="1" z="-8" />
+    <coord x="7" y="1" z="-8"  owner="2"/>
     <coord x="8" y="0" z="-8" />
     
 
@@ -115,10 +115,10 @@
     <coord x="2" y="4" z="-6" />
   </terrain>
   <terrain type ="headquarters">
-    <coord x="4" y="3" z="-7" />
+    <coord x="4" y="3" z="-7" owner="2" />
   </terrain>
   <terrain type="plain">
-    <coord x="6" y="2" z="-8" />
+    <coord x="6" y="2" z="-8"  owner="2"/>
     <coord x="8" y="1" z="-9" />
   </terrain>
 </map>

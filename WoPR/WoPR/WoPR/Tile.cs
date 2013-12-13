@@ -165,17 +165,17 @@ namespace WoPR
         }
                 private void drawBorder(SpriteBatch batch)
                 {
-                    if (Game.ui.currentSelection == position) //if tile is selected us the highlight sprite
+                    if (Game.ui.currentSelection.Equals(position)) //if tile is selected us the highlight sprite
                     {
                         batch.Draw(Game.tBorderS, convertToXY(), Color.White);
                     }
                     else
                     {
-                        if (false)//check if owned by player 1
+                        if (owner != null && owner.isPlayer1)//check if owned by player 1
                         {
                             batch.Draw(Game.tBorder1, convertToXY(), Color.White);
                         }
-                        else if (false)//check if owned by player 1
+                        else if (owner != null && !(owner.isPlayer1))//check if owned by player 1
                         {
                             batch.Draw(Game.tBorder2, convertToXY(), Color.White);
                         }

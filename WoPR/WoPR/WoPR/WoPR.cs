@@ -175,6 +175,7 @@ namespace WoPR
             m.addItem("Exit");
             ui.addMenu(m, "mainMenu");
             ui.activeMenu = "mainMenu";
+
         }
 
         private void mainMenuSelection(string itemSelected)
